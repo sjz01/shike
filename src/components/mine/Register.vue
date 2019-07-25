@@ -1,6 +1,10 @@
 <template>
     <div id="register">
         <p>register</p>
+
+        <router-link to="/login">
+                <p>点击跳转登录</p>
+        </router-link>
     </div>
 </template>
 
