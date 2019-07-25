@@ -1,7 +1,9 @@
 <template>
   <div id="app">
      <navbar></navbar>
+     <router-view></router-view>
     <tabbar></tabbar>
+    <router-view name="Cmenu"></router-view>
   </div>
 </template>
 

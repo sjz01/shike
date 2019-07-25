@@ -1,19 +1,19 @@
 <template>
     <div id="tab-bar">
-        <router-link to="/" class="item">
-           <p>字体</p>
+        <router-link to="/" class="item" exact>
+           <p>&#xe50b;</p>
            <p>首页</p>
         </router-link>
         <router-link to="/menu" class="item">
-           <p>字体</p>
+           <p>&#xe621;</p>
            <p>菜谱</p>
         </router-link>
         <router-link to="/classify" class="item">
-           <p>字体</p>
+           <p>&#xe608;</p>
            <p>分类</p>
         </router-link>
         <router-link to="/mine" class="item">
-           <p>字体</p>
+           <p>&#xe690;</p>
            <p>我的</p>
         </router-link>
     </div>
@@ -29,15 +29,32 @@ export default {
 #tab-bar{
     width:100%;
     height:50px;
-    background: #07103e;
+    background: white;
     display: flex;
     justify-content: space-around;
     position: fixed;
     bottom: 0;
-    color:white;
+    color:black;
+    
      .item{
         height: 50px;
         text-align: center;
+        font-size: 14px;
+
+         p:nth-of-type(1) {
+        font-family: 'myFont';
+        font-size: 22px;
+        height: 22px;
+        line-height: 22px;
+        margin: 8px 0 4px;
+    }
      }
+
+//      router-link-active{
+//        color:turquoise;
+//    }
+  
+
 }
+
 </style>

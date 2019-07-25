@@ -9,7 +9,39 @@ export default new Router({
   routes: [
     {
       path:"/",
-      component:()=>import("@/components/Firstpage")
+      component:()=>import("./views/Firstpage"),
+    },
+    {
+      path:"/menu",
+      component:()=>import("./views/Menu")
+    },
+    {
+      path:"/classify",
+      component:()=>import("./views/Classify")
+    },
+    {
+      path:"/mine",
+      component:()=>import("./views/Mine")
+    },
+    {
+      path:"/cmenu",
+      component:()=>import("./components/Cmenu")
+    },
+    {
+      path:"/vdetail",
+      component:()=>import("./components/Vdetail")
+    },
+    {
+      path:"/login",
+      component:()=>import("./components/mine/Login")
+    },
+    {
+      path:"/register",
+      component:()=>import("./components/mine/Register")
+    },
+    {
+      path:"/ok",
+      component:()=>import("./components/mine/Ok")
     }
   ]
 })

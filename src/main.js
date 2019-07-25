@@ -5,6 +5,7 @@ import store from './store'
 
 //引入reset.css
 import '../public/reset.css'
+import '../public/myFont.css'
 
 Vue.config.productionTip = false
 

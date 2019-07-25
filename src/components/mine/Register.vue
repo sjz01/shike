@@ -1,5 +1,6 @@
 <template>
     <div id="register">
+        <p>register</p>
     </div>
 </template>
 
@@ -10,5 +11,9 @@ export default {
 </script>
 
 <style lang='less' scoped>
+#register{
 
+       
+       margin-top:100px;
+   }
 </style>

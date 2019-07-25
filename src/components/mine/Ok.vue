@@ -1,5 +1,6 @@
 <template>
     <div id="ok">
+        <p>ok</p>
     </div>
 </template>
 
@@ -10,5 +11,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-
+#ok{
+      margin-top:100px;
+   }
 </style>
