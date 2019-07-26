@@ -11,14 +11,16 @@ export default {
 </script>
 
 <style lang='less' scoped>
+@import url(../maincolor/maincolor.less);
 #nav-bar{
    width:100%;
     height:50px;
-    background: #07103e;
+    background: @mainColor;
     position: fixed;
     top: 0;
     color:white;
     text-align: center;
     line-height: 50px;
+    font-size: 24px;
 }
 </style>

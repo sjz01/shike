@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-
+@import url(../maincolor/maincolor.less);
 #tab-bar{
     width:100%;
     height:60px;
@@ -36,8 +36,8 @@ export default {
     box-sizing: border-box;
     position: fixed;
     bottom: 0;
-    color:#07103e;
-    border:3px solid #07103e;
+    color: @mainColor;
+    border:3px solid  @mainColor;
     
 
     
