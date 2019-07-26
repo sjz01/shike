@@ -94,5 +94,6 @@ export default {
        }
        
     }
+     margin-bottom:62px; 
 }
 </style>
