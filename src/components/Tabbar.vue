@@ -37,7 +37,7 @@ export default {
     position: fixed;
     bottom: 0;
     color: @mainColor;
-    border:3px solid  @mainColor;
+    border-top:1px solid  @mainColor;
     
 
     
