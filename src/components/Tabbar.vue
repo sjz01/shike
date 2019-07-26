@@ -26,15 +26,20 @@ export default {
 </script>
 
 <style lang='less' scoped>
+
 #tab-bar{
     width:100%;
-    height:50px;
+    height:60px;
     background: white;
     display: flex;
     justify-content: space-around;
+    box-sizing: border-box;
     position: fixed;
     bottom: 0;
-    color:black;
+    color:#07103e;
+    border:3px solid #07103e;
+    
+
     
      .item{
         height: 50px;
