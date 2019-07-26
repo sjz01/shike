@@ -41,7 +41,12 @@
 
 <script>
 export default {
-  name: "Classify"
+  name: "Classify",
+  methods:{
+    //   changeTitle(title){
+    //       this.$store.commit("changeMyTitle",{title})
+    //   }
+  }
 };
 </script>
 
@@ -68,7 +73,7 @@ export default {
     #a{
        width:74%;
        background: white;
-    
+         font-family: 'myFont';
 
        #v-pills-home{
            width: 90%;
