@@ -1,6 +1,9 @@
 <template>
     <div id="vdetail">
-        <p>这里是vdetail</p>
+        <nav>
+            <span>&#xe512;</span>
+        </nav>
+
     </div>
 </template>
 
@@ -14,5 +17,8 @@ export default {
 #vdetail{
     margin-top:100px;
     background: aqua;
+        nav{
+            font-family: 'myFont';
+        }
    }
 </style>
