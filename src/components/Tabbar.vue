@@ -1,7 +1,7 @@
 <template>
     <div id="tab-bar">
         <router-link to="/" class="item" exact>
-           <p>&#xe50b;</p>
+           <p>&#xe60c;</p>
            <p>首页</p>
         </router-link>
         <router-link to="/menu" class="item">
@@ -9,11 +9,11 @@
            <p>菜谱</p>
         </router-link>
         <router-link to="/classify" class="item">
-           <p>&#xe608;</p>
+           <p>&#xe503;</p>
            <p>分类</p>
         </router-link>
         <router-link to="/mine" class="item">
-           <p>&#xe690;</p>
+           <p>&#xe644;</p>
            <p>我的</p>
         </router-link>
     </div>
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-
+@import url(../maincolor/maincolor.less);
 #tab-bar{
     width:100%;
     height:60px;
@@ -36,8 +36,8 @@ export default {
     box-sizing: border-box;
     position: fixed;
     bottom: 0;
-    color:#07103e;
-    border:3px solid #07103e;
+    color: @mainColor;
+    border-top:1px solid  @mainColor;
     
 
     
