@@ -1,6 +1,10 @@
 <template>
     <div id="ok">
-        <p>ok</p>
+        <div class="name">
+            <p>用户名</p>
+        </div>
+        <div class="enshrine">我的收藏</div>
+
     </div>
 </template>
 
