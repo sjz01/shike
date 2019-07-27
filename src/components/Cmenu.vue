@@ -1,9 +1,66 @@
 <template>
     <div id="cmenu">
-         <p>这里是cmenu</p>
-
-         <router-link to="/vdetail">
-             <p>点击跳转vdetail</p>
+         <nav id="navbar">
+             <span> &#xe512; </span>
+             <span> 食客 </span>
+         </nav>
+         <router-link tag=ul to="/vdetail">
+             <li>
+                 <div id="imgk">
+                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                 </div>
+                   <div id="des">
+                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                  </div>
+             </li>
+             <li>
+                 <div id="imgk">
+                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                 </div>
+                   <div id="des">
+                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                  </div>
+             </li>
+             <li>
+                 <div id="imgk">
+                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                 </div>
+                   <div id="des">
+                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                  </div>
+             </li>
+             <li>
+                 <div id="imgk">
+                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                 </div>
+                   <div id="des">
+                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                  </div>
+             </li>
+            <li>
+                 <div id="imgk">
+                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                 </div>
+                   <div id="des">
+                 "  生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                  </div>
+             </li>
+              <li>
+                 <div id="imgk">
+                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                 </div>
+                   <div id="des">
+                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                  </div>
+             </li>
+              <li>
+                 <div id="imgk">
+                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                 </div>
+                   <div id="des">
+                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                  </div>
+             </li>
          </router-link>
     </div>
 </template>
@@ -14,8 +71,45 @@ export default {
 }
 </script>
 
-<style>
+<style lang='less' scoped>
+@import url(../maincolor/maincolor.less);
 #cmenu{
-    margin-top:100px;
+   width: 100%;
+
+
+    #navbar{
+         font-family: 'myFont';
+        width:80%;
+         height:50px;
+        background: @mainColor;
+         position: fixed;
+         top: 0;
+         color:white;
+         text-align: center;
+         line-height: 50px;
+        font-size: 24px;
+        margin-left: 20px;
+
+
+         span:nth-of-type(1){
+           float: left;
+         }
+    }
+
+    ul{
+        width:90%;
+        margin:0 auto;
+        margin-top: 54px;
+
+        li{
+            display: flex;
+
+            div{
+                margin:5px;
+            }
+        }
+    }
+
+    margin-bottom:62px; 
    }
 </style>
