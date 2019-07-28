@@ -118,6 +118,7 @@ export default {
       }
       .hots_ch {
           flex-wrap: wrap;
+          margin-bottom: 50px;
       }
       .hots_card {
           width: 100px;

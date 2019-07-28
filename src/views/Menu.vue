@@ -1,7 +1,5 @@
 <template>
     <div id="menu">
-        <p>menu</p>
-
         <router-link to="/vdetail">
              <p>点击这里跳转vdetail</p>
         </router-link>
