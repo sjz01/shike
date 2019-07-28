@@ -42,7 +42,7 @@
 <script>
 export default {
   name: "Classify",
-  methods:{
+  methods: {
     //   changeTitle(title){
     //       this.$store.commit("changeMyTitle",{title})
     //   }
@@ -56,44 +56,43 @@ export default {
   display: flex;
   background: rgb(241, 248, 203);
 
-    #v-pills-tab{
-        width: 25%;
-        background: rgb(241, 248, 203);
+  #v-pills-tab {
+    width: 25%;
+    background: rgb(241, 248, 203);
+    font-size: 14px;
+    text-align: center;
+
+    .nav-link {
+      color: black;
+    }
+    .active {
+      background: white;
+      color: rgb(243, 38, 38);
+    }
+  }
+  #a {
+    width: 74%;
+    background: white;
+    font-family: "myFont";
+
+    #v-pills-home {
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+
+      #smallk {
+        width: 63px;
+        height: 30px;
         font-size: 14px;
+        border: 1px solid grey;
+        border-radius: 40%;
         text-align: center;
-        
-        .nav-link{
-            color: black;
-        }
-        .active{
-            background: white;
-            color: rgb(243, 38, 38)
-        }
+        line-height: 30px;
+        margin: 10px 8px;
+        color: black;
+      }
     }
-    #a{
-       width:74%;
-       background: white;
-         font-family: 'myFont';
-
-       #v-pills-home{
-           width: 90%;
-           display: flex;
-           flex-wrap: wrap;
-
-         #smallk{
-           width:63px;
-           height: 30px;
-           font-size: 14px;
-           border: 1px solid grey;
-           border-radius: 40%;
-           text-align: center;
-           line-height: 30px;
-           margin:10px 8px; 
-           color: black;
-       }
-       }
-       
-    }
-     margin-bottom:62px; 
+  }
+  margin-bottom: 62px;
 }
 </style>

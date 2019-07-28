@@ -4,7 +4,7 @@
            <carousel/>
         </router-link>
         <p class="hots_zt">热门专题</p>
-        <router-link to="/vdetail" class="zt_card">
+        <router-link to="/menu" class="zt_card">
            <p class="hots_gx">功效</p>
            <div class="hots">
                <div class="hots_card">
