@@ -7,50 +7,23 @@
         <div id="detail">
             <img class="firstpic" src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
             <div class="item">
-                <p class="cpName">爆浆鸡蛋</p>
+                <p class="cpName">{{this.cpName}}</p>
                 <div class="enshrine" @click="collet">收藏菜谱</div>
-                <P class="des">生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。所以要吃的好，不在于你买了什么，而是你即使用简单的材料也能做出让家人有惊喜的美食。今天这道美食就是这样，简单的食材，只用到了一个鸡蛋和一张海苔就能让你尝到从没吃过的味道，不用加一点调料，不用盐，不用味精！</P>
+                <P class="des">{{this.des}}</P>
                 <P class="food">材料</P>
-                <ul class="foods">
+                <ul class="foods" v-for="(yl,key) in yl" :key="key">
                     <li class="yl">
-                        <span class="ylName">鸡蛋</span>
-                        <span class="ylUnit">100g</span>
-                    </li>
-                    <li class="yl">
-                        <span>海苔</span>
-                        <span>100g</span>
-                    </li>
-                    <li class="yl">
-                        <span>海苔</span>
-                        <span>100g</span>
-                    </li>
-                    <li class="yl">
-                        <span>海苔</span>
-                        <span>100g</span>
+                        <span class="ylName">{{yl.ylName}}</span>
+                        <span class="ylUnit">{{yl.ylUnit}}</span>
                     </li>
                 </ul>
                 <p class="food">做法</p>
-                <div class="way">
-                    <p>1.准备好一张海苔</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801150911864_1.jpg" alt="">
-                    <p>2."把海苔放在一制盘子里</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151018866_2.jpg" alt="">
-                    <p>3.准备好一点温水</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/147880115109369_3.jpg" alt="">
-                    <p>4.在海苔的四周抹上温水</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151135287_4.jpg" alt="">
-                    <p>5.打入一个鸡蛋</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151293194_5.jpg" alt="">
-                    <p>6.把海苔包起，捏紧</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151375757_6.jpg" alt="">
-                    <p>7.锅里放入适量的油，烧热后放入油炸</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151439629_7.jpg" alt="">
-                    <p>8.炸到外面有点松脆的感觉就可以了</p>
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151541259_8.jpg" alt="">
-                   
+                <div class="way" v-for="(step,key) in steps" :key="key">
+                    <p>{{step.orderNum+'.'+step.content}}</p>
+                    <img :src="step.imgUrl" alt="">
                 </div>
                 <p class="food">小贴士</p>
-                <p class="des">1. 海苔四周抹水是因为放入鸡蛋后可以把海苔包拢，鸡蛋不会流出； 2. 如果有的海苔太薄，建议用两张比较安全； 3. 煎之前油要烧热再放入才会炸的快，大约炸一分钟左右就可以了。 4. 用平底锅也可以少放油，就是把平底锅倾斜一下油就集中到一边了。</p>
+                <p class="des">{{this.tip}}</p>
             </div>
             <div class="collect" @click="collet">收藏菜谱</div>
         </div>
@@ -61,6 +34,15 @@
     import http from '@/axios/Api.js'
 export default {
     name:"Vdetail",
+    data(){
+        return{
+            steps:[],
+            yl:[],
+            des:'',
+            tip:'',
+            cpName:"",
+        }
+    },
     methods:{
         back(){
             this.$router.go(-1);
@@ -70,13 +52,13 @@ export default {
         },
         getData(){
             http.getDetail(this,{
-
-                // "id":"5c3dfddfe9b6cc65afc9427e",
-                // "cpName":"黄金鸡蛋盅",
-                // "maxResults":"20",
-                // "page":"1"
             }).then((res)=>{
                 console.log(res);
+                this.steps=res.data.showapi_res_body.datas[0].steps;
+                this.yl = res.data.showapi_res_body.datas[0].yl;
+                this.des = res.data.showapi_res_body.datas[0].des;
+                this.tip = res.data.showapi_res_body.datas[0].tip;
+                this.cpName = res.data.showapi_res_body.datas[0].cpName;
             })
         }
     },
