@@ -1,10 +1,33 @@
 <template>
     <div id="ok">
+
         <div class="name">
             <p>用户名</p>
         </div>
-        <div class="enshrine">我的收藏</div>
-
+        <router-link to="/enshrine">
+           <div class="enshrine">
+               <span>我的收藏&#xe644;</span>
+               <span>more</span>
+           </div>
+        </router-link>
+        <router-link tag=ul to="/vdetail">
+            <li>
+                <div id="imgk">
+                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                </div>
+                <div id="des">
+                    "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                </div>
+            </li>
+            <li>
+                <div id="imgk">
+                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                </div>
+                <div id="des">
+                    "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                </div>
+            </li>
+        </router-link>
     </div>
 </template>
 
@@ -15,7 +38,48 @@ export default {
 </script>
 
 <style lang='less' scoped>
-#ok{
-      margin-top:100px;
-   }
+#ok {
+    margin-top: 50px;
+    background-color: #F8F8F8;
+    height: 590px;
+    padding-top: 20px;
+
+    .name {
+        margin-top: 20px;
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        font-size: 26px;
+        line-height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .enshrine {
+        font-family: 'myFont';
+        font-size: 20px;
+        height: 50px;
+        line-height: 50px;
+        background-color: white;
+
+        span:nth-of-type(2) {
+            float: right;
+        }
+
+    }
+
+    ul {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+
+        li {
+            display: flex;
+            background-color: white;
+            margin-bottom: 15px;
+            div {
+                margin: 5px;
+            }
+        }
+    }
+}
 </style>

@@ -42,6 +42,10 @@ export default new Router({
     {
       path:"/ok",
       component:()=>import("./components/mine/Ok")
+    },
+    {
+      path:"/enshrine",
+      component:()=>import("./components/Enshrine")
     }
   ]
 })
