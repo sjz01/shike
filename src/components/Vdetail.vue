@@ -1,7 +1,7 @@
 <template>
     <div id="vdetail">
         <nav class="navbar">
-            <span>&#xe512;</span>
+            <span @click="back">&#xe512;</span>
             <span>菜谱详情</span>
         </nav>
         <div id="detail">
@@ -60,7 +60,12 @@
 
 <script>
 export default {
-    name:"Vdetail"
+    name:"Vdetail",
+    methods:{
+        back(){
+            this.$router.go(-1);
+        }
+    }
 }
 </script>
 
