@@ -1,7 +1,7 @@
 <template>
     <div id="cmenu">
          <nav id="navbar">
-             <span> &#xe512; </span>
+             <span @click='back'> &#xe512; </span>
              <span> 食客 </span>
          </nav>
          <router-link tag=ul to="/vdetail">
@@ -67,7 +67,12 @@
 
 <script>
 export default {
-  name:"Cmenu"
+  name:"Cmenu",
+  methods: {
+      back(){
+          this.$router.go(-1)
+      }
+  },
 }
 </script>
 
@@ -89,7 +94,7 @@ export default {
          line-height: 50px;
         font-size: 24px;
         margin-left: 20px;
-
+        z-index: 12;
 
          span:nth-of-type(1){
            float: left;
