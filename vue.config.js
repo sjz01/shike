@@ -16,3 +16,13 @@ module.exports = {
  }
 };
 
+// module.exports = {
+//   devServer: {
+//       proxy: {
+//           '/api': {
+//               target: 'http://route.showapi.com',
+//               changeOrigin: true
+//           }
+//       }
+//   }
+// }

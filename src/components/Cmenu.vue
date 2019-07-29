@@ -13,54 +13,7 @@
                  "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
                   </div>
              </li>
-             <li>
-                 <div id="imgk">
-                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                 </div>
-                   <div id="des">
-                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                  </div>
-             </li>
-             <li>
-                 <div id="imgk">
-                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                 </div>
-                   <div id="des">
-                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                  </div>
-             </li>
-             <li>
-                 <div id="imgk">
-                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                 </div>
-                   <div id="des">
-                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                  </div>
-             </li>
-            <li>
-                 <div id="imgk">
-                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                 </div>
-                   <div id="des">
-                 "  生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                  </div>
-             </li>
-              <li>
-                 <div id="imgk">
-                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                 </div>
-                   <div id="des">
-                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                  </div>
-             </li>
-              <li>
-                 <div id="imgk">
-                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                 </div>
-                   <div id="des">
-                 "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                  </div>
-             </li>
+         
          </router-link>
     </div>
 </template>
@@ -71,8 +24,26 @@ export default {
   methods: {
       back(){
           this.$router.go(-1)
-      }
-  },
+      },
+      getdata(){
+          this.axios({
+              method:"post",
+              url: 'http://route.showapi.com/1164-2',
+              params:{
+                  showapi_appid:'100960',
+                  showapi_sign:'7eb84dcfcebe47f09a88af220a551b7a'
+              },
+          })
+          .then((res)=>{
+               console.log(res);
+          })
+     
+     },
+  
+    },
+    created() {
+        this.getdata()
+    },
 }
 </script>
 
