@@ -39,7 +39,7 @@ export default {
            http.getcmenu(this,{
 
             }).then((res) => {
-               console.log(res);
+               // console.log(res);
             })
      
      },

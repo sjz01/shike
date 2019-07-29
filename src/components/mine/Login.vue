@@ -16,6 +16,14 @@
             <router-link to="/ok">
                 <p class="login">登录</p>
             </router-link>
+            <div class="re">
+                <router-link to="/resetpwd">
+                    <span class="reset">重置密码</span>
+                </router-link>
+                <router-link to="resetpwd">
+                    <span class="forget">忘记密码</span>
+                </router-link>
+            </div>
         </div>
 
 
@@ -37,20 +45,20 @@ export default {
     @import url(../../maincolor/maincolor.less);
 #login{
        margin-top:70px;
-    .navbar{
+        .navbar{
 
-        font-family: 'myFont';
-        font-size: 24px;
-        width: 100%;
-        height: 50px;
-        // line-height: 50px;
-        text-align: center;
-        background-color:@mainColor;
-        position:fixed;
-        top:0;
-        color:white;
-        z-index: 11;
-    }
+            font-family: 'myFont';
+            font-size: 24px;
+            width: 100%;
+            height: 50px;
+            // line-height: 50px;
+            text-align: center;
+            background-color:@mainColor;
+            position:fixed;
+            top:0;
+            color:white;
+            z-index: 11;
+        }
         .title{
             font-size: 20px;
             font-weight: 600;
@@ -79,6 +87,7 @@ export default {
                    text-align: center;
                    line-height: 45px;
                }
+
            }
             .login{
                 width: 100%;
@@ -90,5 +99,13 @@ export default {
                 color: #ffffff;
             }
        }
+        .re{
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            color:@mainColor;
+        }
    }
 </style>

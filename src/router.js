@@ -46,6 +46,10 @@ export default new Router({
     {
       path:"/enshrine",
       component:()=>import("./components/Enshrine")
+    },
+    {
+      path:"/resetpwd",
+      component:()=>import("./components/mine/Resetpwd")
     }
   ]
 })
