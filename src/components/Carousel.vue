@@ -35,20 +35,17 @@ export default {
         // some swiper options/callbacks
         // 所有的参数同 swiper 官方 api 参数
         // ...
+        slidesPerView: 1,
         spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
-        },
+        loop: true,
         pagination: {
-          el: ".swiper-pagination",
-          clickable: true
+          el: '.swiper-pagination',
+          clickable: true,
         },
         navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       }
     };
   },
