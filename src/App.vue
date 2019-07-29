@@ -11,6 +11,9 @@
 
 import Tabbar from '@/components/Tabbar'
 import Navbar from '@/components/Navbar'
+
+//按需引入
+import http from '@/axios/Api.js'
    
 export default {
   name: "App",

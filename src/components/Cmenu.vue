@@ -19,24 +19,28 @@
 </template>
 
 <script>
+
+//按需引入
+import http from '@/axios/Api.js'
+
 export default {
   name:"Cmenu",
+  data(){
+      return{
+        //  showapi_appid: showapi_appid,
+        //  showapi_sign:showapi_sign
+      }
+  },
   methods: {
       back(){
           this.$router.go(-1)
       },
       getdata(){
-          this.axios({
-              method:"post",
-              url: 'http://route.showapi.com/1164-2',
-              params:{
-                  showapi_appid:'100960',
-                  showapi_sign:'7eb84dcfcebe47f09a88af220a551b7a'
-              },
-          })
-          .then((res)=>{
+           http.getcmenu(this,{
+
+            }).then((res) => {
                console.log(res);
-          })
+            })
      
      },
   
