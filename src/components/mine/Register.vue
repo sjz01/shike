@@ -10,10 +10,20 @@
                 <input type="text" placeholder="请输入用户名" id="username">
             </div>
             <div class="inputinfo">
-                <input type="text" placeholder="请输入昵称" id="username">
+                <input type="text" placeholder="请输入密码" id="paw">
             </div>
             <div class="inputinfo">
-                <input type="text" placeholder="请输入密码" id="paw">
+                <select name="" id="">
+                    <option style="display: none;text-align: center; text-align-last: center">请选择一个问题</option>
+                    <option>你最崇拜的人是谁？</option>
+                    <option>你最喜欢的食物是什么？</option>
+                    <option>你父亲的名字是？</option>
+                    <option>你母亲的名字是？</option>
+                    <option>给你留下印象最深的人是谁？</option>
+                </select>
+            </div>
+            <div class="inputinfo">
+                <input type="text" placeholder="请输入答案" id="paw">
             </div>
             <router-link to="/login">
                     <p class="register">注册</p>
@@ -68,8 +78,15 @@ export default {
             font-size: 18px;
             /*border: 1px solid firebrick;*/
             overflow: hidden;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             input{
+                outline: 1px solid @mainColor;
+                width: 100%;
+                height: 45px;
+                text-align: center;
+                line-height: 45px;
+            }
+            select{
                 outline: 1px solid @mainColor;
                 width: 100%;
                 height: 45px;

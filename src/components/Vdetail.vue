@@ -58,6 +58,7 @@
 </template>
 
 <script>
+    import http from '@/axios/Api.js'
 export default {
     name:"Vdetail",
     methods:{
@@ -66,7 +67,21 @@ export default {
         },
         collet(){
             alert('收藏成功');
+        },
+        getData(){
+            http.getDetail(this,{
+
+                // "id":"5c3dfddfe9b6cc65afc9427e",
+                // "cpName":"黄金鸡蛋盅",
+                // "maxResults":"20",
+                // "page":"1"
+            }).then((res)=>{
+                console.log(res);
+            })
         }
+    },
+    created() {
+        this.getData();
     }
 }
 </script>

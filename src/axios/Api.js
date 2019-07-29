@@ -14,11 +14,20 @@ function myPost(vue){
     param.append("showapi_sign", "7eb84dcfcebe47f09a88af220a551b7a");
     return vue.axios.post(classpath,param);
 }
-
+function myPostde(vue){
+    var param = new URLSearchParams();
+    param.append('showapi_appid', "100960");
+    param.append("showapi_sign", "7eb84dcfcebe47f09a88af220a551b7a");
+    param.append("type",'蛋类');
+    param.append('id','5c3dfddfe9b6cc65afc9427e')
+    return vue.axios.post(imgpath,param);
+}
 function getcmenu(vue) {
     return myPost(vue,classpath,{});
 }
-
+function getDetail(vue,data){
+    return myPostde(vue,imgpath,data);
+}
 export default {
-    getcmenu
+    getcmenu,getDetail
 }
