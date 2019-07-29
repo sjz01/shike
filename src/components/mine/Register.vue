@@ -1,17 +1,18 @@
 <template>
     <div id="register">
+        <nav class="navbar">
+            <span @click="back">&#xe512;</span>
+            <span>注册</span>
+        </nav>
         <p class="title">食客请注册</p>
         <div class="info">
             <div class="inputinfo">
-                <label for="username">用户名：</label>
                 <input type="text" placeholder="请输入用户名" id="username">
             </div>
             <div class="inputinfo">
-                <label for="username">昵称：</label>
                 <input type="text" placeholder="请输入昵称" id="username">
             </div>
             <div class="inputinfo">
-                <label for="paw">密码： </label>
                 <input type="text" placeholder="请输入密码" id="paw">
             </div>
             <router-link to="/login">
@@ -23,7 +24,12 @@
 
 <script>
 export default {
-    name:"Register"
+    name:"Register",
+    methods:{
+        back(){
+            this.$router.go(-1);
+        }
+    }
 }
 </script>
 
@@ -31,6 +37,20 @@ export default {
     @import url(../../maincolor/maincolor.less);
 #register{
        margin-top:70px;
+    .navbar{
+
+        font-family: 'myFont';
+        font-size: 24px;
+        width: 100%;
+        height: 50px;
+        // line-height: 50px;
+        text-align: center;
+        background-color:@mainColor;
+        position:fixed;
+        top:0;
+        color:white;
+        z-index: 11;
+    }
     .title{
         font-size: 20px;
         font-weight: 600;
@@ -49,15 +69,12 @@ export default {
             /*border: 1px solid firebrick;*/
             overflow: hidden;
             margin-bottom: 40px;
-            label{
-                display: block;
-                float: left;
-            }
             input{
-                display: block;
-                float: right;
-                /*border: 1px solid #bbbbbb;*/
                 outline: 1px solid @mainColor;
+                width: 100%;
+                height: 45px;
+                text-align: center;
+                line-height: 45px;
             }
         }
         .login{
