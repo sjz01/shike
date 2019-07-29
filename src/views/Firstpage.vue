@@ -132,6 +132,8 @@ export default {
           .hots_card_text {
               color: black;
               text-align: center;
+              font-size: 12px;
+              margin-top: 2px;
           }
       }
       
