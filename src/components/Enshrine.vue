@@ -95,6 +95,7 @@
             position:fixed;
             top:0;
             color:white;
+            z-index: 11;
         }
         ul{
             width:90%;
