@@ -1,7 +1,7 @@
 <template>
     <div id="cmenu">
         <nav class="navbar">
-            <span> &#xe512; </span>
+            <span @click="back"> &#xe512; </span>
             <span> 我的收藏 </span>
         </nav>
         <router-link tag=ul to="/vdetail">
@@ -67,7 +67,13 @@
 
 <script>
     export default {
-        name:"Enshrine"
+        name:"Enshrine",
+        methods:{
+            back(){
+                this.$router.go(-1);
+            }
+        }
+
     }
 </script>
 

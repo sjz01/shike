@@ -18,9 +18,19 @@ export default {
 </script>
 
 <style lang='less' scoped>
+    @import url(../maincolor/maincolor.less);
 #mine{
-
-       
-       margin-top:100px;
+       margin-top:140px;
+       p{
+           width: 80%;
+           height: 40px;
+           font-size: 20px;
+           background-color: @mainColor;
+           margin: 0 auto;
+           margin-bottom: 40px;
+           text-align: center;
+           line-height: 40px;
+           color: #ffffff;
+       }
    }
 </style>
