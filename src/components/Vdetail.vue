@@ -5,7 +5,7 @@
         <span>菜谱详情</span>
     </nav>
         <div id="detail">
-            <img class="firstpic" src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+            <img class="firstpic" :src="this.smallImg" alt="">
             <div class="item">
                 <p class="cpName">{{this.cpName}}</p>
                 <div class="enshrine" @click="collet">收藏菜谱</div>
@@ -41,6 +41,7 @@ export default {
             des:'',
             tip:'',
             cpName:"",
+            smallImg:''
         }
     },
     methods:{
@@ -59,6 +60,7 @@ export default {
                 this.des = res.data.showapi_res_body.datas[0].des;
                 this.tip = res.data.showapi_res_body.datas[0].tip;
                 this.cpName = res.data.showapi_res_body.datas[0].cpName;
+                this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
             })
         }
     },
