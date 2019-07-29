@@ -10,8 +10,8 @@
 // post方法总入口
 function myPost(vue){
     var param = new URLSearchParams();
-    param.append('showapi_appid', "101064");
-    param.append("showapi_sign", "aac7679ea2754daab3c11ee13a135a37");
+    param.append('showapi_appid', "101105");
+    param.append("showapi_sign", "61383dfe18e6445c92815d23a219b39b");
     return vue.axios.post(classpath,param);
 }
 function myPostde(vue){

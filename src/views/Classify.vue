@@ -1,14 +1,14 @@
 <template>
     <div id="classify" >
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" v-for="(item,key) in getNewArr" :key="key" v-if="item instanceof Object">{{item}}</a>
+        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"  v-for="(item,key) in this.$store.state.liux.leftList" :key="key">{{item}}</a>
        
     </div>
    
         <router-link to="/cmenu" id="a">
           <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-               <div id="smallk"  v-for="(item,key) in getNewArr" :key="key">{{item}}</div> 
+               <div id="smallk"  v-for="(item,key) in this.$store.state.liux.leftList" :key="key">{{item}}</div> 
             </div>
        
         </div>
@@ -24,7 +24,8 @@ export default {
    data() {
         return {
              meat: [],
-             meate:[]
+          
+             
         }
     },
   methods: {
@@ -35,8 +36,7 @@ export default {
                  this.meat = res.data.showapi_res_body;
                 console.log(res.data.showapi_res_body);
              
-                 this.meate = res.data.showapi_res_body.肉类;
-                // console.log(this.meate)
+              
             })
      
      },
@@ -47,11 +47,17 @@ export default {
         //     return this.$store.state.cityId
         // },
         getNewArr: function() {
+          
           for(var key in this.meat){
-            console.log(key)
+            // console.log(key)
+            this.$store.state.liux.leftList.push(key);
           }
-            return this.meat
+            this.$store.state.liux.leftList.splice(0,2);
+            // console.log(arr);
             
+            return this.meat
+            // console.log(this.meat)
+         
         },
          getLeft: function() {
           //  console.log(this.meate)
