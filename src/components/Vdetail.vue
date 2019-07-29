@@ -18,7 +18,7 @@
                     </li>
                 </ul>
                 <p class="food">做法</p>
-                <div class="way" v-for="(step,key) in steps" :key="key">
+                <div class="way" v-for="(step,key1) in steps" :key1="key1">
                     <p>{{step.orderNum+'.'+step.content}}</p>
                     <img :src="step.imgUrl" alt="">
                 </div>
