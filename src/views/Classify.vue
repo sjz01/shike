@@ -31,14 +31,13 @@ export default {
   },
   methods: {
     dj:function(item) {
-      console.log(item)
-      console.log(this.data[item])
+      // console.log(item)
+      // console.log(this.data[item])
       this.content = []
       for(var key in this.data[item]) {
-        
         this.content.push(key)
       }
-      console.log(this.content)
+      // console.log(this.content)
     }
   },
   created() {
