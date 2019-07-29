@@ -1,4 +1,5 @@
 export default{
   name:'刘笑',
-  leftList:[]
+  leftList:[],
+  type:"蛋类"
 }
