@@ -1,7 +1,7 @@
 <template>
     <div id="classify" >
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" v-for="(iteme,key) in getLeft" :key="key" >{{iteme}}</a>
+        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" v-for="(item,key) in getNewArr" :key="key" v-if="item instanceof Object">{{item}}</a>
        
     </div>
    
@@ -32,10 +32,11 @@ export default {
            http.getcmenu(this,{
 
             }).then((res) => {
-                 this.meat = res.data.showapi_res_body.肉类.牛;
+                 this.meat = res.data.showapi_res_body;
                 console.log(res.data.showapi_res_body);
-               console.log(res.data.showapi_res_body.肉类)
-                 this.meate = res.data.showapi_res_body.肉类.牛;
+             
+                 this.meate = res.data.showapi_res_body.肉类;
+                // console.log(this.meate)
             })
      
      },
@@ -46,11 +47,15 @@ export default {
         //     return this.$store.state.cityId
         // },
         getNewArr: function() {
+          for(var key in this.meat){
+            console.log(key)
+          }
             return this.meat
             
         },
          getLeft: function() {
-            return this.meate
+          //  console.log(this.meate)
+            return this.meate;
             
         }
     },
