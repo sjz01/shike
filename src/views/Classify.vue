@@ -1,53 +1,63 @@
 <template>
-    <div id="classify">
+    <div id="classify" >
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">奶制品</a>
-        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">蛋类</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">豆制品</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">蔬菜</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">主食</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">菌菇类</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">甜品</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">水产</a>
-         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">蔬菜</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">主食</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">菌菇类</a>
-        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">甜品</a>
-        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">水产</a>
+        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" v-for="(iteme,key) in getLeft" :key="key" >{{iteme}}</a>
+       
     </div>
+   
         <router-link to="/cmenu" id="a">
           <div class="tab-content" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-            <div id="smallk">牛奶</div> <div id="smallk">黄油</div> <div id="smallk">巧克力</div> <div id="smallk">奶酪</div>
-             <div id="smallk">酸奶</div> <div id="smallk">淡奶油</div> <div id="smallk">黑巧克力</div>
-              <div id="smallk">酥油</div> <div id="smallk">马苏里</div> <div id="smallk">奶粉</div>
-        </div>
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">profeil</div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">message</div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">setting</div>
-         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">profeil</div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">message</div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">setting</div>
-         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">profeil</div>
-         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">setting</div>
-         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">profeil</div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">message</div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">setting</div>
-         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">profeil</div>
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+               <div id="smallk"  v-for="(item,key) in getNewArr" :key="key">{{item}}</div> 
+            </div>
+       
         </div>
         </router-link>
     </div>
 </template>
 
 <script>
+//按需引入
+import http from '@/axios/Api.js'
 export default {
   name: "Classify",
+   data() {
+        return {
+             meat: [],
+             meate:[]
+        }
+    },
   methods: {
-    //   changeTitle(title){
-    //       this.$store.commit("changeMyTitle",{title})
-    //   }
-  }
-};
+    getdata(){
+           http.getcmenu(this,{
+
+            }).then((res) => {
+                 this.meat = res.data.showapi_res_body.肉类.牛;
+                console.log(res.data.showapi_res_body);
+               console.log(res.data.showapi_res_body.肉类)
+                 this.meate = res.data.showapi_res_body.肉类.牛;
+            })
+     
+     },
+  
+    },
+     computed: {
+        // cid: function() {
+        //     return this.$store.state.cityId
+        // },
+        getNewArr: function() {
+            return this.meat
+            
+        },
+         getLeft: function() {
+            return this.meate
+            
+        }
+    },
+    created() {
+        this.getdata()
+    },
+}
 </script>
 
 <style lang='less' scoped>
