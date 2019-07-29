@@ -1,14 +1,14 @@
 <template>
     <div id="vdetail">
         <nav class="navbar">
-            <span @click="back">&#xe512;</span>
-            <span>菜谱详情</span>
-        </nav>
+        <span @click="back">&#xe512;</span>
+        <span>菜谱详情</span>
+    </nav>
         <div id="detail">
             <img class="firstpic" src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
             <div class="item">
                 <p class="cpName">爆浆鸡蛋</p>
-                <div class="enshrine">收藏菜谱</div>
+                <div class="enshrine" @click="collet">收藏菜谱</div>
                 <P class="des">生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。所以要吃的好，不在于你买了什么，而是你即使用简单的材料也能做出让家人有惊喜的美食。今天这道美食就是这样，简单的食材，只用到了一个鸡蛋和一张海苔就能让你尝到从没吃过的味道，不用加一点调料，不用盐，不用味精！</P>
                 <P class="food">材料</P>
                 <ul class="foods">
@@ -52,9 +52,8 @@
                 <p class="food">小贴士</p>
                 <p class="des">1. 海苔四周抹水是因为放入鸡蛋后可以把海苔包拢，鸡蛋不会流出； 2. 如果有的海苔太薄，建议用两张比较安全； 3. 煎之前油要烧热再放入才会炸的快，大约炸一分钟左右就可以了。 4. 用平底锅也可以少放油，就是把平底锅倾斜一下油就集中到一边了。</p>
             </div>
-            <div class="collect">收藏菜谱</div>
+            <div class="collect" @click="collet">收藏菜谱</div>
         </div>
-
     </div>
 </template>
 
@@ -64,6 +63,9 @@ export default {
     methods:{
         back(){
             this.$router.go(-1);
+        },
+        collet(){
+            alert('收藏成功');
         }
     }
 }
