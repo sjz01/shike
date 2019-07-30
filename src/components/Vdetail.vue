@@ -11,12 +11,14 @@
                 <div class="enshrine" @click="collet">收藏菜谱</div>
                 <P class="des">{{this.des}}</P>
                 <P class="food">材料</P>
-                <ul class="foods" v-for="(yl,key) in yl" :key="key">
-                    <li class="yl">
-                        <span class="ylName">{{yl.ylName}}</span>
-                        <span class="ylUnit">{{yl.ylUnit}}</span>
-                    </li>
-                </ul>
+                <div>
+                    <ul class="foods" v-for="(yl,key) in yl" :key="key">
+                        <li class="yl">
+                            <span class="ylName">{{yl.ylName}}</span>
+                            <span class="ylUnit">{{yl.ylUnit}}</span>
+                        </li>
+                    </ul>
+                </div>
                 <p class="food">做法</p>
                 <div class="way" v-for="(step,key1) in steps" :key="key1">
                     <p>{{step.orderNum+'.'+step.content}}</p>
@@ -54,7 +56,10 @@ export default {
         collet(){
             alert('收藏成功');
             var yizu=new Object();
-
+            yizu.id=this.id;
+            yizu.type=this.type;
+            console.log(yizu);
+            // this.$store.state.lisha.collet.push(yizu);
 
         },
         getData(){
@@ -73,6 +78,8 @@ export default {
                 this.tip = res.data.showapi_res_body.datas[0].tip;
                 this.cpName = res.data.showapi_res_body.datas[0].cpName;
                 this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
+                    this.id= res.data.showapi_res_body.datas[0].id;
+                    this.type= res.data.showapi_res_body.datas[0].type;
 
             })
         }
@@ -106,7 +113,7 @@ export default {
 #detail{
                 width:100%;
                 height:200px;
-                background-color: darkcyan;
+
             .firstpic{
                         width:100%;
                         height:200px;
