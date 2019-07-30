@@ -35,7 +35,7 @@
             getData(){
                 var a = this.$store.state.lisha.collet.type;
                 var b = this.$store.state.lisha.collet.id;
-                
+
                 http.getVdetail(this,a,b)
                     .then((res)=>{
                         // console.log(res);
@@ -82,10 +82,6 @@
                 #des{
                     .title{
                         font-size: 24px;
-                    }
-                    .des{
-                        height: 70px;
-                        text-overflow: ellipsis;
                     }
                 }
             }
