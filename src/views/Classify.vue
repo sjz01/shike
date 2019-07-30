@@ -39,26 +39,29 @@ export default {
       }
       // console.log(this.content)
     },
+      
     dianji:function(item){
       //点击存入Vuex
-      this.$store.state.liux.right.push();
-      console.log(item);
+      this.$store.state.liux.right.splice(0,1);
+      // console.log(item);
       this.$store.state.liux.right.push(item);
       console.log(this.$store.state.liux.right)
     }
   },
   created() {
-    http.getcmenu(this, {}).then(res => {
-      this.arr = res.data.showapi_res_body;
-      this.data = res.data.showapi_res_body;
-      console.log(this.data)
-      for (var key in this.arr) {
-        this.$store.state.liux.leftList.push(key);
-      }
-      this.$store.state.liux.leftList.splice(0, 2);
-      console.log(this.$store.state.liux.leftList);
-    });
-  }
+    
+    http.getcmenu(this, {})
+        .then(res => {
+              this.arr = res.data.showapi_res_body;
+              this.data = res.data.showapi_res_body;
+               console.log(this.data)
+              for (var key in this.arr) {
+                  this.$store.state.liux.leftList.push(key);
+              }
+             this.$store.state.liux.leftList.splice(0, 2);
+             // console.log(this.$store.state.liux.leftList);
+       });
+    }
 };
 </script>
 
