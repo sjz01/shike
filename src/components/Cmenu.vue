@@ -5,7 +5,7 @@
              <span> 食客 </span>
          </nav>
          <router-link tag=ul to="/vdetail">
-             <li v-for="(item,key) in $store.state.liux.des" :key='key'>
+             <li v-for="(item,key) in $store.state.liux.des" :key='key' @click="chuan(item)">
                  <div id="imgk">
                      <img :src="item.smallImg" alt="">
                  </div>
@@ -44,9 +44,15 @@ export default {
         //    this.$store.state.liux.type.push(res.data.showapi_res_body.datas[0].id)
 
         this.$store.state.liux.des = res.data.showapi_res_body.datas;
+       
       });
-    
-    }
+    },
+
+   chuan(item){
+       console.log(item)
+       this.$store.state.liux.id = item.id
+       console.log(this.$store.state.liux.id)
+   }
   },
   created() {
     this.getdata();

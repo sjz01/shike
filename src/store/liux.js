@@ -3,8 +3,6 @@ export default{
   leftList:[],
   right:[],
   id:[],
-  cpName:[],
-  smallImg:[],
   des:[]
  
 }
