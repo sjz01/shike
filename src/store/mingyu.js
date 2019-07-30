@@ -3,5 +3,6 @@ export default {
   cpName:[],
   smallImg:[],
   id:[],
-  food:[]
+  food:[],
+  foods:[]
 }

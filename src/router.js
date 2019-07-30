@@ -50,6 +50,18 @@ export default new Router({
     {
       path:"/resetpwd",
       component:()=>import("./components/mine/Resetpwd")
+    },
+    {
+      path:"/hots1",
+      component:()=>import("./components/Hots1")
+    },
+    {
+      path:"/hots2",
+      component:()=>import("./components/Hots2")
+    },
+    {
+      path:"/hots3",
+      component:()=>import("./components/Hots3")
     }
   ]
 })
