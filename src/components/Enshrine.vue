@@ -10,7 +10,7 @@
                     <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
                 </div>
                 <div id="des">
-                    "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
+                    <p class="title">name</p>
                 </div>
             </li>
         </router-link>
@@ -18,12 +18,35 @@
 </template>
 
 <script>
+    import http from '@/axios/Api.js'
     export default {
         name:"Enshrine",
+        data(){
+            return{
+                smallImg:'',
+                cpName:'',
+                des:''
+            }
+        },
         methods:{
             back(){
                 this.$router.go(-1);
+            },
+            getData(){
+                var a = this.$store.state.lisha.collet.type;
+                var b = this.$store.state.lisha.collet.id;
+                
+                http.getVdetail(this,a,b)
+                    .then((res)=>{
+                        // console.log(res);
+                        // this.des = res.data.showapi_res_body.datas[0].des;
+                        this.cpName = res.data.showapi_res_body.datas[0].cpName;
+                        this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
+                    })
             }
+        },
+        created() {
+            this.getData();
         }
 
     }
@@ -33,10 +56,7 @@
     @import url(../maincolor/maincolor.less);
     #cmenu{
         width: 100%;
-
-
         .navbar{
-
             font-family: 'myFont';
             font-size: 24px;
             width: 100%;
@@ -56,13 +76,20 @@
 
             li{
                 display: flex;
-
-                div{
-                    margin:5px;
+               #imgk{
+                   margin-right: 5px;
+               }
+                #des{
+                    .title{
+                        font-size: 24px;
+                    }
+                    .des{
+                        height: 70px;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
         }
-
         margin-bottom:62px;
     }
 </style>

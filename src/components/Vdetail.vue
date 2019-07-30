@@ -54,7 +54,10 @@ export default {
         collet(){
             alert('收藏成功');
             var yizu=new Object();
-
+            yizu.id=this.id;
+            yizu.type=this.type;
+            console.log(yizu);
+            // this.$store.state.lisha.collet.push(yizu);
 
         },
         getData(){
@@ -71,6 +74,8 @@ export default {
                 this.tip = res.data.showapi_res_body.datas[0].tip;
                 this.cpName = res.data.showapi_res_body.datas[0].cpName;
                 this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
+                    this.id= res.data.showapi_res_body.datas[0].id;
+                    this.type= res.data.showapi_res_body.datas[0].type;
 
             })
         }
