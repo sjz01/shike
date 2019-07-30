@@ -54,12 +54,9 @@ export default {
             this.$router.go(-1);
         },
         collet(){
-            alert('收藏成功');
-            var yizu=new Object();
-            yizu.cpName=this.cpName;
-            yizu.type=this.type;
-            console.log(yizu.cpName);
-            this.$store.state.lisha.collet.push(yizu);
+            http.getVde(this,this.type,this.id).then((res)=>{
+                console.log(res)
+            })
 
 
         },

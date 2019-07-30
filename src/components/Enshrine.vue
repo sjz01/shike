@@ -5,12 +5,12 @@
             <span> 我的收藏 </span>
         </nav>
         <router-link tag=ul to="/vdetail">
-            <li>
+            <li v-for="(item,key) in yiqi" :key="key">
                 <div id="imgk">
-                    <img :src="this.smallImg" alt="">
+                    <img :src="item.smallImg" alt="">
                 </div>
                 <div id="des">
-                    <p class="title">{{this.cpName}}</p>
+                    <p class="title">{{item.cpName}}</p>
                 </div>
             </li>
         </router-link>
@@ -33,20 +33,19 @@
                 this.$router.go(-1);
             },
             getData(){
-                console.log(this.$store.state.lisha.collet)
+                console.log(this.$store.state.lisha.collet);
                 // console.log(this.$store.state.lisha.collet[0]);
                 // console.log(this.$store.state.lisha.collet[0].id);
                 this.$store.state.lisha.collet.forEach((item)=>{
                     console.log(item.cpName);
-                    http.getVdetail(this,item.type,item.cpName)
+                    http.getVde(this,)
                         .then((res)=>{
-                            console.log(res);
+                            // console.log(res);
                             // this.des = res.data.showapi_res_body.datas[0].des;
                             var yiqi = new Object();
-                            this.yiqi.cpName += res.data.showapi_res_body.datas[0].cpName;
-                            this.yiqi.smallImg += res.data.showapi_res_body.datas[0].smallImg;
+                            this.yiqi.cpName = res.data.showapi_res_body.datas[0].cpName;
+                            this.yiqi.smallImg = res.data.showapi_res_body.datas[0].smallImg;
                             this.yidui.push(this.yiqi);
-                            console.log(this.yidui);
                         })
 
                 })
@@ -58,6 +57,11 @@
         },
         created() {
             this.getData();
+            http.getV(this).then((res)=>{
+                console.log(res);
+                http.getVdetail(this,).then((res)=>{})
+                console.log(res)
+            })
         }
 
     }
