@@ -7,10 +7,10 @@
         <router-link tag=ul to="/vdetail">
             <li>
                 <div id="imgk">
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
+                    <img :src="this.smallImg" alt="">
                 </div>
                 <div id="des">
-                    <p class="title">name</p>
+                    <p class="title">{{this.cpName}}</p>
                 </div>
             </li>
         </router-link>
@@ -24,8 +24,8 @@
         data(){
             return{
                 smallImg:'',
-                cpName:'',
-                des:''
+                yidui:[],
+                yiqi:{}
             }
         },
         methods:{
@@ -33,16 +33,27 @@
                 this.$router.go(-1);
             },
             getData(){
-                var a = this.$store.state.lisha.collet.type;
-                var b = this.$store.state.lisha.collet.id;
+                // console.log(this.$store.state.lisha.collet)
+                // console.log(this.$store.state.lisha.collet[0]);
+                // console.log(this.$store.state.lisha.collet[0].id);
+                this.$store.state.lisha.collet.forEach((item)=>{
+                    console.log(item.id);
+                    http.getVdetail(this,item.type,item.id)
+                        .then((res)=>{
+                            console.log(res);
+                            // this.des = res.data.showapi_res_body.datas[0].des;
+                            var yiqi = new Object();
+                            this.yiqi.cpName = res.data.showapi_res_body.datas[0].cpName;
+                            this.yiqi.smallImg= res.data.showapi_res_body.datas[0].smallImg;
+                            this.yidui.push(this.yiqi);
+                            console.log(this.yidui);
+                        })
 
-                http.getVdetail(this,a,b)
-                    .then((res)=>{
-                        // console.log(res);
-                        // this.des = res.data.showapi_res_body.datas[0].des;
-                        this.cpName = res.data.showapi_res_body.datas[0].cpName;
-                        this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
-                    })
+                })
+                // var a = this.$store.state.lisha.collet.type;
+                // var b = this.$store.state.lisha.collet.id;
+
+
             }
         },
         created() {
