@@ -45,7 +45,7 @@ export default {
       this.$store.state.liux.right.splice(0,1);
       // console.log(item);
       this.$store.state.liux.right.push(item);
-      console.log(this.$store.state.liux.right)
+      console.log(this.$store.state.liux.right[0])
     }
   },
   created() {

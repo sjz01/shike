@@ -10,8 +10,8 @@
 // post方法总入口
 function myPost(vue){
     var param = new URLSearchParams();
-    param.append('showapi_appid', "100678");
-    param.append("showapi_sign", "a3fc1e6d5e9140ff99d86ec74d30fc44");
+    param.append('showapi_appid', "100960");
+    param.append("showapi_sign", "7eb84dcfcebe47f09a88af220a551b7a");
     return vue.axios.post(classpath,param);
 }
 function myPostde(vue){
@@ -20,14 +20,14 @@ function myPostde(vue){
 function getcmenu(vue) {
     return myPost(vue,classpath,{});
 }
-function getDetail(vue,type,id){
-    var id = id;
+function getDetail(vue,type){
+    // var id = id;
     var type = type;
     var param = new URLSearchParams();
-    param.append('showapi_appid', "100678");
-    param.append("showapi_sign", "a3fc1e6d5e9140ff99d86ec74d30fc44");
+    param.append('showapi_appid', "100960");
+    param.append("showapi_sign", "7eb84dcfcebe47f09a88af220a551b7a");
     param.append('type', type);
-    param.append("id", id);
+    // param.append("id", id);
     return vue.axios.post(imgpath,param);
 }
 export default {
