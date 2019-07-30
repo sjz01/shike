@@ -11,7 +11,7 @@
 function myPost(vue){
     var param = new URLSearchParams();
     param.append('showapi_appid', "101064");
-    param.append("showapi_sign", "aac7679ea2754daab3c11ee13a135a37");
+    param.append("showapi_sign", "61383dfe18e6445c92815d23a219b39b");
     return vue.axios.post(classpath,param);
 }
 function myPostde(vue){
@@ -25,7 +25,7 @@ function getDetail(vue,type){
     var type = type;
     var param = new URLSearchParams();
     param.append('showapi_appid', "101064");
-    param.append("showapi_sign", "aac7679ea2754daab3c11ee13a135a37");
+    param.append("showapi_sign", "61383dfe18e6445c92815d23a219b39b");
     param.append('type', type);
     // param.append("id", id);
     return vue.axios.post(imgpath,param);

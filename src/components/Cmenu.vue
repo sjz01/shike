@@ -11,7 +11,7 @@
                  </div>
                    <div id="des">
                     <p>{{item.cpName}}</p>
-                    <p>{{item.des}}</p>
+                    <!-- <p>{{item.des}}</p> -->
                   </div>
              </li>
          
@@ -49,9 +49,9 @@ export default {
     },
 
    chuan(item){
-       console.log(item)
+    //    console.log(item)
        this.$store.state.liux.id = item.id
-       console.log(this.$store.state.liux.id)
+    //    console.log(this.$store.state.liux.id)
    }
   },
   created() {
@@ -103,6 +103,6 @@ export default {
     }
   }
 
-  margin-bottom: 62px;
+  margin-bottom: 70px;
 }
 </style>
