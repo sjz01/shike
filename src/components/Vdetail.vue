@@ -53,10 +53,17 @@ export default {
         },
         collet(){
             alert('收藏成功');
+            var yizu=new Object();
+
 
         },
         getData(){
-            http.getDetail(this,this.$store.state.type,this.$store.state.id).then((res)=>{
+            console.log(this.$store.state.liux.right[0]);
+            console.log(this.$store.state.liux.id);
+            var a = this.$store.state.liux.right[0];
+            var b = this.$store.state.liux.id;
+            http.getVdetail(this,a,b)
+                .then((res)=>{
                 console.log(res);
                 this.steps=res.data.showapi_res_body.datas[0].steps;
                 this.yl = res.data.showapi_res_body.datas[0].yl;
