@@ -37,10 +37,9 @@ export default {
           this.$router.go(-1)
       },
       getdata(){
-           http.getcmenu(this,{
-
-            }).then((res) => {
-               // console.log(res);
+           http.getDetail(this,this.$store.liux.right[0])
+           .then((res) => {
+               console.log(res);
             })
      
      },
