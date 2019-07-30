@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     getdata() {
-
+        
       http.getDetail(this,'早餐').then(res => {
         // res.data.showapi_res_body.datas.forEach((item)=>{
         // this.$store.state.mingyu.cpName.push(item.cpName);
