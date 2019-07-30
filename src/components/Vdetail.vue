@@ -61,6 +61,7 @@ export default {
             console.log(yizu);
             // this.$store.state.lisha.collet.push(yizu);
 
+
         },
         getData(){
             // console.log(this.$store.state.type);
