@@ -53,6 +53,7 @@ export default {
         },
         collet(){
             alert('收藏成功');
+
         },
         getData(){
             http.getDetail(this,this.$store.state.type,this.$store.state.id).then((res)=>{
