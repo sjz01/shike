@@ -32,6 +32,7 @@
 
 <script>
     import http from '@/axios/Api.js'
+
 export default {
     name:"Vdetail",
     data(){
@@ -41,7 +42,9 @@ export default {
             des:'',
             tip:'',
             cpName:"",
-            smallImg:''
+            smallImg:'',
+            id:'',
+            type:''
         }
     },
     methods:{
@@ -52,8 +55,7 @@ export default {
             alert('收藏成功');
         },
         getData(){
-            http.getDetail(this,{
-            }).then((res)=>{
+            http.getDetail(this,this.$store.state.type,this.$store.state.id).then((res)=>{
                 console.log(res);
                 this.steps=res.data.showapi_res_body.datas[0].steps;
                 this.yl = res.data.showapi_res_body.datas[0].yl;
@@ -61,6 +63,7 @@ export default {
                 this.tip = res.data.showapi_res_body.datas[0].tip;
                 this.cpName = res.data.showapi_res_body.datas[0].cpName;
                 this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
+
             })
         }
     },
