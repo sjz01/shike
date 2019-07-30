@@ -7,7 +7,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    lisha,mingyu,liux
   },
   mutations: {
 
@@ -16,6 +16,6 @@ export default new Vuex.Store({
 
   },
   modules:{
-    lisha,mingyu,liux
+    
   }
 })
