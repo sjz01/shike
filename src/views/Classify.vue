@@ -43,9 +43,11 @@ export default {
     dianji:function(item){
       //点击存入Vuex
       this.$store.state.liux.right.splice(0,1);
-      // console.log(item);
+      this.$store.state.type.splice(0,1);
+      console.log(item);
       this.$store.state.liux.right.push(item);
-      console.log(this.$store.state.liux.right[0])
+      this.$store.state.type.push(item);
+      console.log(this.$store.state.type)
     }
   },
   created() {

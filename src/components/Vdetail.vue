@@ -18,7 +18,7 @@
                     </li>
                 </ul>
                 <p class="food">做法</p>
-                <div class="way" v-for="(step,key1) in steps" :key1="key1">
+                <div class="way" v-for="(step,key1) in steps" :key="key1">
                     <p>{{step.orderNum+'.'+step.content}}</p>
                     <img :src="step.imgUrl" alt="">
                 </div>
@@ -61,13 +61,15 @@ export default {
 
         },
         getData(){
-            console.log(this.$store.state.liux.right[0]);
-            console.log(this.$store.state.liux.id);
-            var a = this.$store.state.liux.right[0];
-            var b = this.$store.state.liux.id;
-            http.getVdetail(this,a,b)
+            // console.log(this.$store.state.type);
+            // console.log(this.$store.state.id);
+            // var a = this.$store.state.liux.right;
+            // console.log(a)
+            // var b = this.$store.state.liux.id;
+            // console.log(b)
+            http.getVdetail(this,this.$store.state.type,this.$store.state.id)
                 .then((res)=>{
-                console.log(res);
+                // console.log(res);
                 this.steps=res.data.showapi_res_body.datas[0].steps;
                 this.yl = res.data.showapi_res_body.datas[0].yl;
                 this.des = res.data.showapi_res_body.datas[0].des;
