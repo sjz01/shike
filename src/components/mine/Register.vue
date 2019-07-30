@@ -7,13 +7,13 @@
         <p class="title">食客请注册</p>
         <div class="info">
             <div class="inputinfo">
-                <input type="text" placeholder="请输入用户名" id="username">
+                <input id="userName" type="text" placeholder="请输入用户名" v-model="userName" required>
             </div>
             <div class="inputinfo">
-                <input type="text" placeholder="请输入密码" id="paw">
+                <input id="password" type="password" placeholder="请输入密码" v-model="password" required>
             </div>
             <div class="inputinfo">
-                <select name="" id="">
+                <select id="question" v-model="question" required>
                     <option style="display: none;text-align: center; text-align-last: center">请选择一个问题</option>
                     <option>你最崇拜的人是谁？</option>
                     <option>你最喜欢的食物是什么？</option>
@@ -23,21 +23,44 @@
                 </select>
             </div>
             <div class="inputinfo">
-                <input type="text" placeholder="请输入答案" id="paw">
+                <input id="answer" type="text" v-model="answer" placeholder="请输入答案" required>
             </div>
-            <router-link to="/login">
-                    <p class="register">注册</p>
-            </router-link>
+<!--            <router-link to="/login">-->
+                    <p class="register" v-model="answer" @click="zhuce(userName,password,question,answer,1)">注册</p>
+<!--            </router-link>-->
         </div>
     </div>
 </template>
 
 <script>
-export default {
+    import http from '@/axios/Api.js'
+    export default {
     name:"Register",
+    data(){
+        return{
+            userName:'',
+            password:"",
+            question:'请选择一个问题',
+            answer:"",
+            favorite:""
+        }
+    },
     methods:{
         back(){
             this.$router.go(-1);
+        },
+        zhuce(userName,password,question,answer,favorite){
+            console.log(userName);
+            console.log(password);
+            console.log(question);
+            console.log(answer);
+            console.log(favorite);
+
+            http.register(this,userName,password,question,answer,favorite)
+                .then((res)=>{
+                    console.log(res);
+                })
+
         }
     }
 }

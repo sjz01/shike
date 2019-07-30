@@ -12,22 +12,7 @@
            </div>
         </router-link>
         <router-link tag=ul to="/vdetail">
-            <li>
-                <div id="imgk">
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                </div>
-                <div id="des">
-                    "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                </div>
-            </li>
-            <li>
-                <div id="imgk">
-                    <img src="http://app2.showapi.com/img/caipuImg3/201611110205/1478801151775155_smallImg.jpg" alt="">
-                </div>
-                <div id="des">
-                    "生活里真的是创意无限,虽然都是一样的柴米油盐,有些家吃的欢,有些家吃的愁。"
-                </div>
-            </li>
+
         </router-link>
     </div>
 </template>
@@ -43,7 +28,7 @@ export default {
     margin-top: 50px;
     background-color: #F8F8F8;
     height: 590px;
-    padding-top: 20px;
+    padding: 20px 10px 0 ;
 
     .name {
         margin-top: 20px;

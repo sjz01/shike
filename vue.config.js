@@ -20,9 +20,23 @@ module.exports = {
 //   devServer: {
 //       proxy: {
 //           '/api': {
-//               target: 'http://route.showapi.com',
+//               target: 'http://123.56.195.82:9999',
 //               changeOrigin: true
 //           }
 //       }
 //   }
 // }
+module.exports = {
+    devServer:{
+        proxy:{
+            '/api':{
+                // http://apis
+                target:'http://123.56.195.82:9999',
+                changeOrigin:true,
+                // pathRewrite: {
+                //     '^/api' : ""
+                // }
+            }
+        }
+    }
+}
