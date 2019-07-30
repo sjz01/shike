@@ -26,7 +26,7 @@ export default {
   methods: {
     getdata() {
         
-      http.getDetail(this,'早餐').then(res => {
+      http.getDetail(this,'减肥').then(res => {
         // res.data.showapi_res_body.datas.forEach((item)=>{
         // this.$store.state.mingyu.cpName.push(item.cpName);
         // this.$store.state.mingyu.smallImg.push(item.smallImg);
@@ -68,7 +68,7 @@ export default {
       margin-top: 6px;
     }
     .pic_font {
-      margin: 4px 0;
+     margin: 4px 0;
      font-size: 16px;
      height: 40px;
      line-height: 40px;
