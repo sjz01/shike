@@ -11,12 +11,14 @@
                 <div class="enshrine" @click="collet">收藏菜谱</div>
                 <P class="des">{{this.des}}</P>
                 <P class="food">材料</P>
-                <ul class="foods" v-for="(yl,key) in yl" :key="key">
-                    <li class="yl">
-                        <span class="ylName">{{yl.ylName}}</span>
-                        <span class="ylUnit">{{yl.ylUnit}}</span>
-                    </li>
-                </ul>
+                <div>
+                    <ul class="foods" v-for="(yl,key) in yl" :key="key">
+                        <li class="yl">
+                            <span class="ylName">{{yl.ylName}}</span>
+                            <span class="ylUnit">{{yl.ylUnit}}</span>
+                        </li>
+                    </ul>
+                </div>
                 <p class="food">做法</p>
                 <div class="way" v-for="(step,key1) in steps" :key="key1">
                     <p>{{step.orderNum+'.'+step.content}}</p>
@@ -111,7 +113,7 @@ export default {
 #detail{
                 width:100%;
                 height:200px;
-                background-color: darkcyan;
+
             .firstpic{
                         width:100%;
                         height:200px;
