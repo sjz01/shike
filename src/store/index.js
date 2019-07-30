@@ -7,7 +7,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    lisha,mingyu,liux
+    lisha,mingyu,liux,
+    type:[],
+    id:[]
   },
   mutations: {
 

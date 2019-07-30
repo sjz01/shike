@@ -33,9 +33,7 @@ export default {
     };
   },
   methods: {
-    back() {
-      this.$router.go(-1);
-    },
+    
     getdata() {
       var a = this.$store.state.liux.right[0];
     //   console.log(a);
@@ -49,10 +47,16 @@ export default {
     },
 
    chuan(item){
-    //    console.log(item)
-       this.$store.state.liux.id = item.id
-    //    console.log(this.$store.state.liux.id)
-   }
+       console.log(item)
+       this.$store.state.type = item.type_v2
+       this.$store.state.id = item.id
+       console.log( this.$store.state.type)
+        console.log(  this.$store.state.id )
+   },
+   back() {
+      this.$router.go(-1);
+    },
+
   },
   created() {
     this.getdata();
