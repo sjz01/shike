@@ -3,80 +3,11 @@
         <router-link to="/cmenu">
            <carousel/>
         </router-link>
-        <p class="hots_zt">热门专题</p>
-        <router-link to="/cmenu" class="zt_card">
-           <p class="hots_gx">功效</p>
-           <div class="hots">
-               <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">减肥</p>
-                </div>
-                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">美容</p>
-                </div>
-                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">润肺抗燥</p>
-                </div>
-                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">清热祛火</p>
-                </div>
-            </div>
-            <p class="hots_gx">特色食品</p>
-           <div class="hots">
-               <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">小吃</p>
-                </div>
-                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">凉菜</p>
-                </div>
-                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">零食</p>
-                </div>
-                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">三明治</p>
-                </div>
-            </div>
-            <p class="hots_gx ">特殊场合</p>
-           <div class="hots hots_ch">
-               <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">早餐</p>
-                </div>
-                <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">下午茶</p>
-                </div>
-                <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">便当</p>
-                </div>
-                <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">圣诞节</p>
-                </div>
-                <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">年夜饭</p>
-                </div>
-                <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">深夜食堂</p>
-                </div>
-                <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">情人节</p>
-                </div>
-                <div class="hots_card col-2">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
-                   <p class="hots_card_text">宵夜</p>
-                </div>
+        <p class="hots_zt">美食大赏</p>
+        <router-link to="/vdetail">
+            <div class="vtl_d" v-for="(item,key) in $store.state.mingyu.food" :key = "key" @click="chuan(item)">
+                <img class="pic" :src="item.smallImg" alt="图片加载异常">
+                <p class="pic_font">{{item.cpName}}</p>
             </div>
         </router-link>
     </div>
@@ -88,6 +19,38 @@ export default {
   name: "Firstpage",
   components: {
     Carousel
+  },
+  data() {
+    return {
+      cpName: "",
+      smallImg: "",
+      food: []
+    };
+  },
+  methods: {
+    getdata() {
+        
+      http.getDetail(this,'肉类').then(res => {
+        // res.data.showapi_res_body.datas.forEach((item)=>{
+        // this.$store.state.mingyu.cpName.push(item.cpName);
+        // this.$store.state.mingyu.smallImg.push(item.smallImg);
+        // });
+        this.$store.state.mingyu.food = res.data.showapi_res_body.datas;
+        // console.log(this.$store.state.mingyu.food)
+      });
+      // console.log(this.$store.state.mingyu.smallImg)
+    },
+    chuan(item) {
+        //  console.log(item)
+        //  console.log(item.id)
+        this.$store.state.id = item.id;
+        this.$store.state.type = item.type_v2;
+        // console.log(  this.$store.state.id)
+        // console.log( this.$store.state.type)
+    }
+  },
+  created() {
+    this.getdata();
   }
 };
 </script>
@@ -101,43 +64,34 @@ export default {
       font-weight: 600;
       margin-top: 20px;
       margin-bottom: 10px;
+      text-align: center;
   }
 
-  .zt_card {
-      width: 100px;
+  .vtl_d {
+    width: 94%;
+    height: 280px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
 
-      .hots_gx {
-          text-align: center;
-          color: black;
-          font-size: 18px;
-          font-weight: 600;
-      }
-      .hots {
-          display: flex;
-          justify-content: space-between;
-      }
-      .hots_ch {
-          flex-wrap: wrap;
-          margin-bottom: 50px;
-      }
-      .hots_card {
-          width: 100px;
-          height: 100px;
-          margin: 10px 10px;
-          padding: 0;
-
-          .hots_card_img {
-              width: 100%;
-          }
-          .hots_card_text {
-              color: black;
-              text-align: center;
-              font-size: 12px;
-              margin-top: 2px;
-          }
-      }
-      
-      
+    .pic {
+      width: 100%;
+      margin-top: 6px;
+    }
+    .pic_font {
+      margin: 4px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: black;
+      text-decoration: none;
+    }
+  }
+  .vtl_p {
+    height: 30;
+    line-height: 30px;
+    text-align: center;
+    color: black;
+    margin-bottom: 70px;
   }
 
 }
