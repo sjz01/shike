@@ -47,11 +47,11 @@ export default {
     },
 
    chuan(item){
-       console.log(item)
+       // console.log(item)
        this.$store.state.type = item.type_v2
        this.$store.state.id = item.id
-       console.log( this.$store.state.type)
-        console.log(  this.$store.state.id )
+       // console.log( this.$store.state.type)
+       //  console.log(  this.$store.state.id )
    },
    back() {
       this.$router.go(-1);
