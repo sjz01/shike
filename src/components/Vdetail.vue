@@ -59,7 +59,8 @@ export default {
             yizu.id=this.id;
             yizu.type=this.type;
             console.log(yizu);
-            // this.$store.state.lisha.collet.push(yizu);
+            this.$store.state.lisha.collet.push(yizu);
+
 
         },
         getData(){
@@ -79,7 +80,7 @@ export default {
                 this.cpName = res.data.showapi_res_body.datas[0].cpName;
                 this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
                     this.id= res.data.showapi_res_body.datas[0].id;
-                    this.type= res.data.showapi_res_body.datas[0].type;
+                    this.type= res.data.showapi_res_body.datas[0].type_v2;
 
             })
         }

@@ -44,10 +44,10 @@ export default {
       //点击存入Vuex
       this.$store.state.liux.right.splice(0,1);
       this.$store.state.type.splice(0,1);
-      console.log(item);
+      // console.log(item);
       this.$store.state.liux.right.push(item);
       this.$store.state.type.push(item);
-      console.log(this.$store.state.type)
+      // console.log(this.$store.state.type)
     }
   },
   created() {
