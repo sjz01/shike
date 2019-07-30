@@ -59,6 +59,9 @@ function getV (vue){
     param.append("password", localStorage.password);
     return vue.axios.post(sc+getlike_path,param);
 }
+function register (vue){
+
+}
 export default {
-    getcmenu,getDetail,getVdetail,getVde,getV
+    getcmenu,getDetail,getVdetail,getVde,getV,register
 }
