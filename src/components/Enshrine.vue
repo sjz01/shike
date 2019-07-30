@@ -33,18 +33,18 @@
                 this.$router.go(-1);
             },
             getData(){
-                // console.log(this.$store.state.lisha.collet)
+                console.log(this.$store.state.lisha.collet)
                 // console.log(this.$store.state.lisha.collet[0]);
                 // console.log(this.$store.state.lisha.collet[0].id);
                 this.$store.state.lisha.collet.forEach((item)=>{
-                    console.log(item.id);
-                    http.getVdetail(this,item.type,item.id)
+                    console.log(item.cpName);
+                    http.getVdetail(this,item.type,item.cpName)
                         .then((res)=>{
                             console.log(res);
                             // this.des = res.data.showapi_res_body.datas[0].des;
                             var yiqi = new Object();
-                            this.yiqi.cpName = res.data.showapi_res_body.datas[0].cpName;
-                            this.yiqi.smallImg= res.data.showapi_res_body.datas[0].smallImg;
+                            this.yiqi.cpName += res.data.showapi_res_body.datas[0].cpName;
+                            this.yiqi.smallImg += res.data.showapi_res_body.datas[0].smallImg;
                             this.yidui.push(this.yiqi);
                             console.log(this.yidui);
                         })

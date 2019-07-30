@@ -56,9 +56,9 @@ export default {
         collet(){
             alert('收藏成功');
             var yizu=new Object();
-            yizu.id=this.id;
+            yizu.cpName=this.cpName;
             yizu.type=this.type;
-            console.log(yizu);
+            console.log(yizu.cpName);
             this.$store.state.lisha.collet.push(yizu);
 
 
