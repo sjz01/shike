@@ -8,7 +8,7 @@
         <router-link to="/cmenu" id="a">
           <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-               <div id="smallk"  v-for="(item,key) in content" :key="key">{{item}}</div> 
+               <div id="smallk"  v-for="(item,key) in content" :key="key" @click="dianji(item)">{{item}}</div> 
             </div>
        
         </div>
@@ -38,6 +38,13 @@ export default {
         this.content.push(key)
       }
       // console.log(this.content)
+    },
+    dianji:function(item){
+      //点击存入Vuex
+      this.$store.state.liux.right.push();
+      console.log(item);
+      this.$store.state.liux.right.push(item);
+      console.log(this.$store.state.liux.right)
     }
   },
   created() {
