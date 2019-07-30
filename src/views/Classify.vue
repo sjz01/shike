@@ -51,7 +51,7 @@ export default {
     }
   },
   created() {
-    
+    this.$store.state.liux.leftList = []
     http.getcmenu(this, {})
         .then(res => {
               this.arr = res.data.showapi_res_body;
