@@ -48,7 +48,7 @@ export default {
       this.$store.state.liux.right.push(item);
       this.$store.state.type.push(item);
       // console.log(this.$store.state.type)
-    }
+    
   },
   created() {
     this.$store.state.liux.leftList = []
@@ -64,7 +64,8 @@ export default {
              // console.log(this.$store.state.liux.leftList);
        });
     }
-};
+  }
+}
 </script>
 
 <style lang='less' scoped>
