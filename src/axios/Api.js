@@ -24,8 +24,8 @@ function getDetail(vue,type){
     // var id = id;
     var type = type;
     var param = new URLSearchParams();
-    param.append('showapi_appid', "100960");
-    param.append("showapi_sign", "7eb84dcfcebe47f09a88af220a551b7a");
+    param.append('showapi_appid', "101064");
+    param.append("showapi_sign", "aac7679ea2754daab3c11ee13a135a37");
     param.append('type', type);
     // param.append("id", id);
     return vue.axios.post(imgpath,param);

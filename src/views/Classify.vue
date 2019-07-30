@@ -54,7 +54,7 @@ export default {
         .then(res => {
               this.arr = res.data.showapi_res_body;
               this.data = res.data.showapi_res_body;
-               console.log(this.data)
+              //  console.log(this.data)
               for (var key in this.arr) {
                   this.$store.state.liux.leftList.push(key);
               }

@@ -38,14 +38,14 @@ export default {
     },
     getdata() {
       var a = this.$store.state.liux.right[0];
-      console.log(a);
+    //   console.log(a);
       http.getDetail(this, a).then(res => {
-        console.log(res.data.showapi_res_body.datas);
+        // console.log(res.data.showapi_res_body.datas);
         //    this.$store.state.liux.type.push(res.data.showapi_res_body.datas[0].id)
 
         this.$store.state.liux.des = res.data.showapi_res_body.datas;
       });
-      console.log();
+    
     }
   },
   created() {
