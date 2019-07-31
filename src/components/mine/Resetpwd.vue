@@ -11,7 +11,7 @@
            <input id="question" v-model="question" type="text" placeholder="显示问题" disabled>
        </div>
        <div class="user">
-           <input type="text" v-model="answer" placeholder="请输入答案" required>
+           <input type="text" v-model="answer" @change="chane"  placeholder="请输入答案" required>
        </div>
        <router-link to="/Rewrite">
              <div class="commit" @click="commit">提交</div>
@@ -41,10 +41,15 @@
                         // console.log(res);
                         if(res.data.result){
                             console.log(this.userName);
-                            var that = this;
-                            http.question(that,this.userName)
+
+
+                            http.question(this,this.userName)
                                 .then((res)=>{
                                 console.log(res);
+                                    this.question = res.data.user[2].question;
+                                    if(this.password==res.data.user[3].answer){
+                                        
+                                    }
                             })
                         }
                     })
