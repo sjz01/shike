@@ -38,15 +38,15 @@
                 // console.log(this.$store.state.lisha.collet[0].id);
                 this.$store.state.lisha.collet.forEach((item)=>{
                     console.log(item.cpName);
-                    http.getVde(this,)
-                        .then((res)=>{
-                            // console.log(res);
-                            // this.des = res.data.showapi_res_body.datas[0].des;
-                            var yiqi = new Object();
-                            this.yiqi.cpName = res.data.showapi_res_body.datas[0].cpName;
-                            this.yiqi.smallImg = res.data.showapi_res_body.datas[0].smallImg;
-                            this.yidui.push(this.yiqi);
-                        })
+                    // http.getVde(this,)
+                    //     .then((res)=>{
+                    //         // console.log(res);
+                    //         // this.des = res.data.showapi_res_body.datas[0].des;
+                    //         var yiqi = new Object();
+                    //         this.yiqi.cpName = res.data.showapi_res_body.datas[0].cpName;
+                    //         this.yiqi.smallImg = res.data.showapi_res_body.datas[0].smallImg;
+                    //         this.yidui.push(this.yiqi);
+                    //     })
 
                 })
                 // var a = this.$store.state.lisha.collet.type;
@@ -57,11 +57,11 @@
         },
         created() {
             this.getData();
-            http.getV(this).then((res)=>{
-                console.log(res);
-                http.getVdetail(this,).then((res)=>{})
-                console.log(res)
-            })
+            // http.getV(this).then((res)=>{
+            //     console.log(res);
+            //     http.getVdetail(this,).then((res)=>{})
+            //     console.log(res)
+            // })
         }
 
     }

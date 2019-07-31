@@ -54,11 +54,9 @@ export default {
             this.$router.go(-1);
         },
         collet(){
-            http.getVde(this,this.type,this.id).then((res)=>{
-                console.log(res)
-            })
-
-
+            // http.getVde(this,this.type,this.id).then((res)=>{
+            //     console.log(res)
+            // })
         },
         getData(){
             // console.log(this.$store.state.type);
@@ -70,12 +68,12 @@ export default {
             http.getVdetail(this,this.$store.state.type,this.$store.state.id)
                 .then((res)=>{
                 // console.log(res);
-                this.steps=res.data.showapi_res_body.datas[0].steps;
-                this.yl = res.data.showapi_res_body.datas[0].yl;
-                this.des = res.data.showapi_res_body.datas[0].des;
-                this.tip = res.data.showapi_res_body.datas[0].tip;
-                this.cpName = res.data.showapi_res_body.datas[0].cpName;
-                this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
+                    this.steps=res.data.showapi_res_body.datas[0].steps;
+                    this.yl = res.data.showapi_res_body.datas[0].yl;
+                    this.des = res.data.showapi_res_body.datas[0].des;
+                    this.tip = res.data.showapi_res_body.datas[0].tip;
+                    this.cpName = res.data.showapi_res_body.datas[0].cpName;
+                    this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
                     this.id= res.data.showapi_res_body.datas[0].id;
                     this.type= res.data.showapi_res_body.datas[0].type_v2;
 
