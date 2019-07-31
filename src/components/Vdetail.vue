@@ -54,9 +54,9 @@ export default {
             this.$router.go(-1);
         },
         collet(){
-            // http.getVde(this,this.type,this.id).then((res)=>{
-            //     console.log(res)
-            // })
+        this.$store.state.lisha.arr.push({type:this.type,id:this.id})
+            console.log(this.$store.state.lisha.arr)
+
         },
         getData(){
             // console.log(this.$store.state.type);
