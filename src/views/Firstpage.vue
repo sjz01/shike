@@ -9,7 +9,7 @@
            <div class="hots">
                <router-link to="/hots1">
                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
+                   <img class="hots_card_img" src="http://cp1.douguo.net/upload/caiku/7/3/d/yuan_73a82e6aa2c5dcdcda814c9eeba3491d.jpg" alt="">
                    <p class="hots_card_text">减肥、美容、润肺抗燥、清热祛火</p>
                 </div>
                 </router-link>
@@ -19,7 +19,7 @@
            <div class="hots">
                    <router-link to="/hots2">
                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
+                   <img class="hots_card_img" src="http://www.csxdf.com/uploads/allimg/160604/1_160604175315_1.jpg" alt="">
                    <p class="hots_card_text">小吃、凉菜、零食、三明治</p>
                 </div>
                    </router-link>
@@ -29,7 +29,7 @@
            <div class="hots hots_ch">
                <router-link to="/hots3">
                <div class="hots_card ">
-                   <img class="hots_card_img" src="http://www.talkimages.cn/images/medium/20133071/tkf003_525873.jpg" alt="">
+                   <img class="hots_card_img" src="https://b3-q.mafengwo.net/s9/M00/63/B2/wKgBs1hXlGSAG470AAYSCPhEUdg97.jpeg?imageMogr2%2Fthumbnail%2F%21300x190r%2Fgravity%2FCenter%2Fcrop%2F%21300x190%2Fquality%2F90" alt="">
                    <p class="hots_card_text">便当、宵夜、年夜饭</p>
                    <p class="vtl_p">亲，到底啦~</p>
                 </div>
