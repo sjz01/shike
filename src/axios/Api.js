@@ -4,16 +4,16 @@
  const classpath = 'http://route.showapi.com/1164-2'
  const imgpath = 'http://route.showapi.com/1164-1'
 const sc = 'http://123.56.195.82:9999'
-const like_path = '/updateFavorite'
-const getlike_path = '/getFavorite'
+const like_path = '/api/updateFavorite'
+const getlike_path = '/api/getFavorite'
 //注册
-const regi_path = '/register'
+const regi_path = '/api/register'
 //登录
-const login_path = '/login'
+const login_path = '/api/login'
 //重置密码时验证用户名
-const resetpwd_path = '/existUser'
+const resetpwd_path = '/api/existUser'
 //重置密码
-const rewrite_path = '/updatePassword'
+const rewrite_path = '/api/updatePassword'
 
 //配置路径
 
@@ -59,14 +59,14 @@ function getVde (vue,type,id){
     param.append('question', localStorage.question);
     param.append("answer", localStorage.answer);
     param.append("id", id);
-    return vue.axios.post(sc+like_path,param);
+    return vue.axios.post(like_path,param);
 }
 //获取收藏
 function getV (vue){
     var param = new URLSearchParams();
     param.append('userName', localStorage.userName);
     param.append("password", localStorage.password);
-    return vue.axios.post(sc+getlike_path,param);
+    return vue.axios.post(getlike_path,param);
 }
 //注册
 function register (vue,userName,password,question,answer){
@@ -84,14 +84,15 @@ function register (vue,userName,password,question,answer){
 }
 //登录
 function login (vue,userName,password){
-    var userName = userName;
-    var password = password;
+    // var userName = userName;
+    // var password = password;
     var param = new URLSearchParams();
     param.append('userName',userName);
     param.append('password',password);
+    param.append('favoriter',1);
     return vue.axios.post(login_path,param);
 }
-//找回密码时验证用户名
+//找回密码时验证用户名"
 function resetpwd(vue,userName){
     var userName = userName;
     var param = new URLSearchParams();

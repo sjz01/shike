@@ -47,7 +47,8 @@ export default {
 
        login(){
            console.log(this.userName);
-           http.login(this,this.userName,this.password).then((res)=>{
+           http.login(this,this.userName,this.password)
+               .then((res)=>{
                 console.log(res);
            })
        },
