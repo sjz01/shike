@@ -1,12 +1,14 @@
 <template>
-    <div id="menu">
+    <div id="menu" >
+      <mt-loadmore topPullText="" topDropText="" topLoadingText="" :top-method="loadTop" :bottom-method="loadBottom"  ref="loadmore">
         <router-link to="/vdetail">
-            <div class="vtl_d" v-for="(item,key) in $store.state.mingyu.food" :key = "key" @click="chuan(item)">
+            <div class="vtl_d" v-for="(item,key) in $store.state.mingyu.food" :key = "key" @click="chuan(item)" >
                 <img class="pic" :src="item.smallImg" alt="图片加载异常">
                 <p class="pic_font">{{item.cpName}}</p>
             </div>
         </router-link>
             <p class="vtl_p">亲，到底啦~</p>
+      </mt-loadmore>
     </div>
 
 
@@ -25,8 +27,7 @@ export default {
   },
   methods: {
     getdata() {
-        
-      http.getDetail(this,'早餐').then(res => {
+      http.getDetail(this, "早餐").then(res => {
         // res.data.showapi_res_body.datas.forEach((item)=>{
         // this.$store.state.mingyu.cpName.push(item.cpName);
         // this.$store.state.mingyu.smallImg.push(item.smallImg);
@@ -37,13 +38,22 @@ export default {
       // console.log(this.$store.state.mingyu.smallImg)
     },
     chuan(item) {
-        //  console.log(item)
-        //  console.log(item.id)
-        this.$store.state.id = item.id;
-        this.$store.state.type = item.type_v2;
-        // console.log(  this.$store.state.id)
-        // console.log( this.$store.state.type)
-    }
+      //  console.log(item)
+      //  console.log(item.id)
+      this.$store.state.id = item.id;
+      this.$store.state.type = item.type_v2;
+      // console.log(  this.$store.state.id)
+      // console.log( this.$store.state.type)
+    },
+    loadTop() {
+      // load more data
+      this.$refs.loadmore.onTopLoaded();
+},
+    loadBottom() {
+      // load more data
+      this.allLoaded = true;// if all data are loaded
+      this.$refs.loadmore.onBottomLoaded();
+}
   },
   created() {
     this.getdata();
@@ -58,7 +68,7 @@ export default {
 
   .vtl_d {
     width: 94%;
-    height: 280px;
+    height: 265px;
     margin: 0 auto;
     margin-top: 10px;
     border-bottom: 1px solid #ccc;
@@ -68,12 +78,13 @@ export default {
       margin-top: 6px;
     }
     .pic_font {
-    margin: 4px 0;
-    font-size: 16px;
-    height: 22px;
-    line-height: 22px;
-    font-weight: 600;
-    color: black;
+      margin: 4px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: black;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space:nowrap;
     }
   }
   .vtl_p {
@@ -81,7 +92,7 @@ export default {
     line-height: 30px;
     text-align: center;
     color: black;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
   }
 }
 </style>

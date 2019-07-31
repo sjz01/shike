@@ -3,25 +3,25 @@
         <router-link to="/menu">
            <carousel/>
         </router-link>
-        <p class="hots_zt">热门专题</p>
+        <p class="hots_zt"></p>
         <div class="zt_card">
-           <p class="hots_gx">功效</p>
+           <p class="hots_gx"></p>
            <div class="hots">
                <router-link to="/hots1">
                <div class="hots_card">
-                   <img class="hots_card_img" src="http://cp1.douguo.net/upload/caiku/7/3/d/yuan_73a82e6aa2c5dcdcda814c9eeba3491d.jpg" alt="">
+                   <img class="hots_card_img" src="http://img5.imgtn.bdimg.com/it/u=396815354,2668923717&fm=11&gp=0.jpg" alt="">
                    <p class="hots_card_text">减肥</p>
                 </div>
                 </router-link>
                 <router-link to="/hots2">
                 <div class="hots_card">
-                   <img class="hots_card_img" src="https://i01piccdn.sogoucdn.com/2875d6cde2744afe" alt="">
+                   <img class="hots_card_img" src="http://img5.imgtn.bdimg.com/it/u=3817927647,797643096&fm=26&gp=0.jpg" alt="">
                    <p class="hots_card_text">美容</p>
                 </div>
                 </router-link>
                 <router-link to="/hots3">
                 <div class="hots_card">
-                   <img class="hots_card_img" src="https://img.tulaoshi.com/image/20160823/5dd018068a22fa735bbf72b5b225a13d.jpg" alt="">
+                   <img class="hots_card_img" src="http://img5.imgtn.bdimg.com/it/u=2724402882,2272601991&fm=15&gp=0.jpg" alt="">
                    <p class="hots_card_text">清热祛火</p>
                 </div>
                 </router-link>

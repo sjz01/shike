@@ -4,6 +4,9 @@ import router from './router'
 import store from '@/store'
 import Swiper from 'swiper'
 import axios from 'axios'
+import { Loadmore } from 'mint-ui';
+
+Vue.component(Loadmore.name, Loadmore);
 
 //引入jq
 import $ from "jquery";
