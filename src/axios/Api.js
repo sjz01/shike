@@ -120,5 +120,5 @@ function question(vue,userName){
 
 
 export default {
-    getcmenu,getDetail,getVdetail,getVde,getV,register,login,resetpwd,rewrite
+    getcmenu,getDetail,getVdetail,getVde,getV,register,login,resetpwd,rewrite,question
 }
