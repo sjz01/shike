@@ -48,7 +48,9 @@ export default {
     color: @mainColor;
     border-top:1px solid  @mainColor;
     
-
+      a{
+           color: @mainColor;
+      }
     
      .item{
         height: 50px;

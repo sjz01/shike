@@ -1,13 +1,15 @@
 <template>
     <div id="menu">
-      <span class="left" @click="back">&#xe512;</span>
+        <span class="left" @click="back">&#xe512;</span>
+        <mt-loadmore topPullText="" topDropText="更新中" topLoadingText="" :top-method="loadTop" :bottom-method="loadBottom"  ref="loadmore">
         <router-link to="/vdetail">
-            <div class="vtl_d" v-for="(item,key) in $store.state.mingyu.food" :key = "key" @click="chuan(item)">
+            <div class="vtl_d" v-for="(item,key) in $store.state.mingyu.food" :key = "key" @click="chuan(item)" >
                 <img class="pic" :src="item.smallImg" alt="图片加载异常">
                 <p class="pic_font">{{item.cpName}}</p>
             </div>
         </router-link>
             <p class="vtl_p">亲，到底啦~</p>
+      </mt-loadmore>
     </div>
 
 
@@ -25,7 +27,7 @@ export default {
     };
   },
   methods: {
-    back(){
+    back() {
       this.$router.go(-1);
     },
     getdata() {
@@ -46,7 +48,16 @@ export default {
       this.$store.state.type = item.type_v2;
       // console.log(  this.$store.state.id)
       // console.log( this.$store.state.type)
-    }
+    },
+    loadTop() {
+      // load more data
+      this.$refs.loadmore.onTopLoaded();
+},
+    loadBottom() {
+      // load more data
+      this.allLoaded = true;// if all data are loaded
+      this.$refs.loadmore.onBottomLoaded();
+}
   },
   created() {
     this.getdata();
@@ -69,8 +80,8 @@ export default {
     line-height: 50px;
     text-align: center;
     background-color: @mainColor;
-    position:fixed;
-    top:0;
+    position: fixed;
+    top: 0;
     color: white;
     z-index: 11;
   }
@@ -90,7 +101,7 @@ export default {
       margin: 4px 0;
       font-size: 16px;
       height: 22px;
-    line-height: 22px;
+      line-height: 22px;
       font-weight: 600;
       color: black;
       text-decoration: none;
