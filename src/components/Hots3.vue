@@ -1,5 +1,6 @@
 <template>
     <div id="menu">
+        <span class="left" @click="back">&#xe512;</span>
         <router-link to="/vdetail">
             <div class="vtl_d" v-for="(item,key) in $store.state.mingyu.food" :key = "key" @click="chuan(item)">
                 <img class="pic" :src="item.smallImg" alt="图片加载异常">
@@ -24,6 +25,9 @@ export default {
     };
   },
   methods: {
+     back(){
+      this.$router.go(-1);
+    },
     getdata() {
         
       http.getDetail(this,'情人节').then(res => {
@@ -52,9 +56,25 @@ export default {
 </script>
 
 <style lang='less' scoped>
+@import url(../maincolor/maincolor.less);
+
 #menu {
   margin-top: 50px;
   color: black;
+
+  .left {
+    font-family: "myFont";
+    font-size: 24px;
+    width: 14%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: @mainColor;
+    position:fixed;
+    top:0;
+    color: white;
+    z-index: 11;
+  }
 
   .vtl_d {
     width: 94%;
