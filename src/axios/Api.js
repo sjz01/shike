@@ -54,7 +54,7 @@ function getVdetail (vue,type,id){
 }
 
 //增加收藏或删除收藏
-function updateshou (vue,userName,password,question,answer,favorite){
+function updateshou (vue,favorite){
     var param = new URLSearchParams();
     param.append('userName', localStorage.userName);
     param.append("password", localStorage.password);

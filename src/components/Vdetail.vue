@@ -54,17 +54,21 @@ export default {
             this.$router.go(-1);
         },
         collet(){
-        this.$store.state.lisha.arr.push({type:this.type,id:this.id})
-            console.log(this.$store.state.lisha.arr)
+            console.log(this.$store.state.lisha.arr);
+            this.$store.state.lisha.arr.forEach((item)=>{
+                if(itme.type!=this.type&&item.id!=this.id){
+                    console.log(this.$store.state.lisha.arr);
+                    this.$store.state.lisha.arr.push({type:this.type,id:this.id})
+                    http.updateshou(this,this.$store.state.lisha.arr)
+                        .then((res)=>{
+                            console.log(res);
+                        })
+                }else{
 
+                }
+            });
         },
         getData(){
-            // console.log(this.$store.state.type);
-            // console.log(this.$store.state.id);
-            // var a = this.$store.state.liux.right;
-            // console.log(a)
-            // var b = this.$store.state.liux.id;
-            // console.log(b)
             http.getVdetail(this,this.$store.state.type,this.$store.state.id)
                 .then((res)=>{
                 // console.log(res);
