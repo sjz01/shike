@@ -14,7 +14,15 @@
 
 <script>
 export default {
-    name:"Mine"
+    name:"Mine",
+    methods:{
+
+    },
+    beforeCreate(){
+        if(localStorage.userName&&localStorage.password){
+            location.href='/ok';
+        }
+    }
 }
 </script>
 

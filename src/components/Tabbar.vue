@@ -12,16 +12,25 @@
            <p>&#xe503;</p>
            <p>分类</p>
         </router-link>
+<!--        <router-link to="/ok" class="item">-->
+<!--           <p>&#xe644;</p>-->
+<!--           <p>我的</p>-->
+<!--        </router-link>-->
         <router-link to="/mine" class="item">
-           <p>&#xe644;</p>
-           <p>我的</p>
+            <p>&#xe644;</p>
+            <p>我的</p>
         </router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name:"Tabbar"
+    name:"Tabbar",
+    data(){
+        return{
+
+        }
+    }
 }
 </script>
 

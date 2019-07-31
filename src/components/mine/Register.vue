@@ -65,6 +65,7 @@
                         localStorage.password = this.password;
                         localStorage.question = this.question;
                         localStorage.answer = this.answer;
+
                         location.href='/login';
                     }else{
                         alert(res.data.msg);

@@ -11,11 +11,14 @@
            <input id="question" v-model="question" type="text" placeholder="显示问题" disabled>
        </div>
        <div class="user">
-           <input type="text" v-model="answer" @change="chane"  placeholder="请输入答案" required>
+           <input type="text" v-model="answer" @change="respon"  placeholder="请输入答案" required>
        </div>
-       <router-link to="/Rewrite">
+       <div class="user">
+           <input type="password" v-model="newpass" @change="newpwd"  placeholder="请输入新的密码" required>
+       </div>
+<!--       <router-link to="/Rewrite">-->
              <div class="commit" @click="commit">提交</div>
-       </router-link>
+<!--       </router-link>-->
    </div>
 </template>
 
@@ -28,7 +31,9 @@
                 userName:'',
                 answer:'',
                 password:'',
-                question:''
+                question:'',
+                res:'',
+                newpass:""
             }
         },
         methods:{
@@ -40,25 +45,36 @@
                     .then((res)=>{
                         // console.log(res);
                         if(res.data.result){
-                            console.log(this.userName);
-
-
+                            alert(res.data.msg);
                             http.question(this,this.userName)
                                 .then((res)=>{
-                                console.log(res);
+                                    console.log(res);
                                     this.question = res.data.user[2].question;
-                                    if(this.password==res.data.user[3].answer){
-                                        
-                                    }
-                            })
+                                    this.res = res;
+
+                                })
+
                         }
                     })
             },
-            commit(){
-                http.resetpwd(this,this.userName)
-                    .then(()=>{
+            respon(e){
+                // console.log(this.answer);
+                if(this.answer==this.res.data.user[3].answer){
+                    // console.log(this.res);
+                    alert('回答正确，请点输入新密码')
+                }else{
+                    alert('答案错误，请重新输入');
+                }
+            },
+            newpwd(){
+                http.rewrite(this,this.userName,this.newpass,this.question,this.answer)
+                    .then((res)=>{
 
                     })
+            },
+            commit(){
+                location.href='/login';
+                console.log('123');
             }
     }
 

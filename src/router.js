@@ -86,10 +86,6 @@ export default new Router({
     {
       path:"/hots9",
       component:()=>import("./components/Hots9")
-    },
-    {
-      path:"/Rewrite",
-      component:()=>import('./components/mine/Rewrite')
     }
   ]
 })

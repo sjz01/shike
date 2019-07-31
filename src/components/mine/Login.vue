@@ -52,6 +52,7 @@ export default {
                    console.log(this.userName)
                    if(res.data.result){
                        alert(res.data.msg);
+                       location.href='/ok';
                    }else{
                        alert(res.data.msg+'，请重新登录');
                    }
