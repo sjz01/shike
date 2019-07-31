@@ -64,6 +64,30 @@ export default new Router({
       component:()=>import("./components/Hots3")
     },
     {
+      path:"/hots4",
+      component:()=>import("./components/Hots4")
+    },
+    {
+      path:"/hots5",
+      component:()=>import("./components/Hots5")
+    },
+    {
+      path:"/hots6",
+      component:()=>import("./components/Hots6")
+    },
+    {
+      path:"/hots7",
+      component:()=>import("./components/Hots7")
+    },
+    {
+      path:"/hots8",
+      component:()=>import("./components/Hots8")
+    },
+    {
+      path:"/hots9",
+      component:()=>import("./components/Hots9")
+    },
+    {
       path:"/Rewrite",
       component:()=>import('./components/mine/Rewrite')
     }

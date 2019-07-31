@@ -89,8 +89,8 @@ export default {
     .pic_font {
       margin: 4px 0;
       font-size: 16px;
-      height: 40px;
-      line-height: 40px;
+      height: 22px;
+    line-height: 22px;
       font-weight: 600;
       color: black;
       text-decoration: none;

@@ -30,7 +30,7 @@ export default {
     },
     getdata() {
         
-      http.getDetail(this,'情人节').then(res => {
+      http.getDetail(this,'清热祛火').then(res => {
         // res.data.showapi_res_body.datas.forEach((item)=>{
         // this.$store.state.mingyu.cpName.push(item.cpName);
         // this.$store.state.mingyu.smallImg.push(item.smallImg);
@@ -90,8 +90,8 @@ export default {
     .pic_font {
       margin: 4px 0;
      font-size: 16px;
-     height: 40px;
-     line-height: 40px;
+    height: 22px;
+    line-height: 22px;
      font-weight: 600;
      color: black;
      text-decoration: none;
