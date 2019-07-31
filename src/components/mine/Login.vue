@@ -59,6 +59,7 @@ export default {
                    if(res.data.result){
                        alert(res.data.msg);
                        localStorage.userName=this.userName;
+                       localStorage.password = this.password;
                        this.$store.state.lisha.userName=this.userName;
                        location.href='/ok';
                    }else{

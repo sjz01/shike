@@ -4,7 +4,9 @@
  const classpath = 'http://route.showapi.com/1164-2'
  const imgpath = 'http://route.showapi.com/1164-1'
 const sc = 'http://123.56.195.82:9999'
+//增加收藏或删除收藏
 const like_path = '/api/updateFavorite'
+//获取收藏
 const getlike_path = '/api/getFavorite'
 //注册
 const regi_path = '/api/register'
@@ -51,19 +53,18 @@ function getVdetail (vue,type,id){
     return vue.axios.post(imgpath,param);
 }
 
-//收藏
-function getVde (vue,type,id){
-    var id = id+','+type;
+//增加收藏或删除收藏
+function updateshou (vue,favorite){
     var param = new URLSearchParams();
     param.append('userName', localStorage.userName);
     param.append("password", localStorage.password);
     param.append('question', localStorage.question);
     param.append("answer", localStorage.answer);
-    param.append("id", id);
+    param.append("favorite", favorite);
     return vue.axios.post(like_path,param);
 }
 //获取收藏
-function getV (vue){
+function getshou (vue){
     var param = new URLSearchParams();
     param.append('userName', localStorage.userName);
     param.append("password", localStorage.password);
@@ -120,5 +121,5 @@ function question(vue,userName){
 
 
 export default {
-    getcmenu,getDetail,getVdetail,getVde,getV,register,login,resetpwd,rewrite,question
+    getcmenu,getDetail,getVdetail,getshou,updateshou,register,login,resetpwd,rewrite,question
 }

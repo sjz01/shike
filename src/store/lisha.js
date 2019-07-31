@@ -3,6 +3,7 @@ export default {
   name:'lisha',
   collet:[],
   userName:'',
-  isshow:false
+  isshow:false,
+  arr:[]
 
 }
