@@ -7,14 +7,14 @@
         <p class="title">食客请登录</p>
         <div class="info">
             <div class="inputinfo">
-                <input type="text" placeholder="请输入用户名" id="username">
+                <input type="text" v-model="userName" placeholder="请输入用户名" id="username">
 
             </div>
             <div class="inputinfo">
-                <input type="text" placeholder="请输入密码" id="paw">
+                <input type="text" v-model="password" placeholder="请输入密码" id="paw">
             </div>
             <router-link to="/ok">
-                <p class="login">登录</p>
+                <p class="login" @click="login">登录</p>
             </router-link>
             <div class="re">
                 <router-link to="/resetpwd">
@@ -31,12 +31,28 @@
 </template>
 
 <script>
+    import http from '@/axios/Api.js'
 export default {
     name:"Login",
+    data(){
+        return{
+            userName:'',
+            password:""
+        }
+    },
    methods:{
        back(){
            this.$router.go(-1);
-       }
+       },
+
+       login(){
+           console.log(this.userName);
+           http.login(this,this.userName,this.password).then((res)=>{
+                console.log(res);
+           })
+       },
+
+
 }
 }
 </script>

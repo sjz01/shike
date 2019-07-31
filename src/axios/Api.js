@@ -98,6 +98,7 @@ function resetpwd(vue,userName){
     param.append('userName',userName);
     return vue.axios.post(resetpwd_path,param);
 }
+//重置密码
 function rewrite(vue,userName,password,question,answer,favorite){
     var userName = userName;
     var password = password;
