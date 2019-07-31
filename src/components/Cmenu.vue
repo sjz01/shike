@@ -35,8 +35,10 @@ export default {
   methods: {
     
     getdata() {
-      var a = this.$store.state.liux.right[0];
-      // console.log(this.$store.state.liux.right);
+      var a = this.$store.state.righttype[0];
+      // var a = this.$store.state.liux.right[0];
+      // console.log(this.$store.state.liux.right[0]);
+      console.log(this.$store.state.righttype[0]);
       http.getDetail(this, a).then(res => {
         // console.log(res.data.showapi_res_body.datas);
         //    this.$store.state.liux.type.push(res.data.showapi_res_body.datas[0].id)
