@@ -68,11 +68,13 @@ export default {
       margin-top: 6px;
     }
     .pic_font {
-      margin: 4px 0;
-      font-size: 18px;
-      font-weight: 600;
-      color: black;
-      text-decoration: none;
+     margin: 4px 0;
+     font-size: 16px;
+     height: 40px;
+     line-height: 40px;
+     font-weight: 600;
+     color: black;
+     text-decoration: none;
     }
   }
   .vtl_p {

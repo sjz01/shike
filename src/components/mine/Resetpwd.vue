@@ -5,16 +5,19 @@
            <span>重置密码</span>
        </nav>
        <div class="user">
-            <input type="text" placeholder="请输入用户名">
+            <input id="userName" v-model="userName" type="text" placeholder="请输入用户名" required>
        </div>
        <div class="user">
-           <input type="text" placeholder="显示问题" disabled>
+           <input id="question" type="text" placeholder="显示问题" disabled>
        </div>
        <div class="user">
-           <input type="text" placeholder="请输入答案">
+           <input type="text" v-model="answer" placeholder="请输入答案" required>
+       </div>
+       <div class="user">
+           <input type="text" v-model="password" placeholder="请输入新的密码" required>
        </div>
        <router-link to="/login">
-             <div class="commit">提交</div>
+             <div class="commit" @click="commit">提交</div>
        </router-link>
    </div>
 </template>
@@ -22,9 +25,22 @@
 <script>
     export default {
         name: "resetpwd",
+        data(){
+            return{
+                userName:'',
+                answer:'',
+                password:''
+            }
+        },
         methods:{
             back(){
                 this.$router.go(-1);
+            },
+            commit(){
+                http.resetpwd(this,this.userName)
+                    .then(()=>{
+
+                    })
             }
     }
 
