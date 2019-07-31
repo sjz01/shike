@@ -1,6 +1,6 @@
 //接口的配置
- const showapi_appid = '101226'
- const showapi_sign = '6d4920a562cd4d73a7e1c7c03c056ba6'
+ const showapi_appid = '101105'
+ const showapi_sign = '61383dfe18e6445c92815d23a219b39b'
  const classpath = 'http://route.showapi.com/1164-2'
  const imgpath = 'http://route.showapi.com/1164-1'
 const sc = 'http://123.56.195.82:9999'
@@ -14,7 +14,8 @@ const login_path = '/api/login'
 const resetpwd_path = '/api/existUser'
 //重置密码
 const rewrite_path = '/api/updatePassword'
-
+//拿到用户名对应的问题
+const question_path = '/api/getInfo'
 //配置路径
 
 //api接口实现的get  post 公用方法
@@ -79,6 +80,7 @@ function register (vue,userName,password,question,answer){
     param.append('password',password);
     param.append('question',question);
     param.append('answer',answer);
+    param.append('favorite','');
 
     return vue.axios.post(regi_path,param);
 }
@@ -100,20 +102,22 @@ function resetpwd(vue,userName){
     return vue.axios.post(resetpwd_path,param);
 }
 //重置密码
-function rewrite(vue,userName,password,question,answer,favorite){
-    var userName = userName;
-    var password = password;
-    var question = question;
-    var answer = answer;
-    var favorite = favorite;
+function rewrite(vue,userName,password,question,answer){
     var param = new URLSearchParams();
     param.append('userName',userName);
     param.append('password',password);
     param.append('question',question);
     param.append('answer',answer);
-    param.append('favorite',favorite);
+    param.append('favorite',"");
     return vue.axios.post(rewrite_path,param);
 }
+//拿到问题
+function question(vue,userName){
+    var param = new URLSearchParams();
+    param.append('userName',userName);
+    return vue.axios.post(question_path,param);
+}
+
 
 export default {
     getcmenu,getDetail,getVdetail,getVde,getV,register,login,resetpwd,rewrite

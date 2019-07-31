@@ -11,11 +11,11 @@
 
             </div>
             <div class="inputinfo">
-                <input type="text" v-model="password" placeholder="请输入密码" id="paw">
+                <input type="password" v-model="password" placeholder="请输入密码" id="paw">
             </div>
-            <router-link to="/ok">
+<!--            <router-link to="/ok">-->
                 <p class="login" @click="login">登录</p>
-            </router-link>
+<!--            </router-link>-->
             <div class="re">
                 <router-link to="/resetpwd">
                     <span class="reset">重置密码</span>
@@ -44,12 +44,17 @@ export default {
        back(){
            this.$router.go(-1);
        },
-
        login(){
            console.log(this.userName);
            http.login(this,this.userName,this.password)
                .then((res)=>{
-                console.log(res);
+                   console.log(res);
+                   console.log(this.userName)
+                   if(res.data.result){
+                       alert(res.data.msg);
+                   }else{
+                       alert(res.data.msg+'，请重新登录');
+                   }
            })
        },
 

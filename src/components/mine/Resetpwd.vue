@@ -5,36 +5,49 @@
            <span>重置密码</span>
        </nav>
        <div class="user">
-            <input id="userName" v-model="userName" type="text" placeholder="请输入用户名" required>
+            <input id="userName" v-model="userName" type="text" placeholder="请输入用户名" @change="chan" required>
        </div>
        <div class="user">
-           <input id="question" type="text" placeholder="显示问题" disabled>
+           <input id="question" v-model="question" type="text" placeholder="显示问题" disabled>
        </div>
        <div class="user">
            <input type="text" v-model="answer" placeholder="请输入答案" required>
        </div>
-       <div class="user">
-           <input type="text" v-model="password" placeholder="请输入新的密码" required>
-       </div>
-       <router-link to="/login">
+       <router-link to="/Rewrite">
              <div class="commit" @click="commit">提交</div>
        </router-link>
    </div>
 </template>
 
 <script>
+    import http from '@/axios/Api.js'
     export default {
         name: "resetpwd",
         data(){
             return{
                 userName:'',
                 answer:'',
-                password:''
+                password:'',
+                question:''
             }
         },
         methods:{
             back(){
                 this.$router.go(-1);
+            },
+            chan(e){
+                http.resetpwd(this,this.userName)
+                    .then((res)=>{
+                        // console.log(res);
+                        if(res.data.result){
+                            console.log(this.userName);
+                            var that = this;
+                            http.question(that,this.userName)
+                                .then((res)=>{
+                                console.log(res);
+                            })
+                        }
+                    })
             },
             commit(){
                 http.resetpwd(this,this.userName)

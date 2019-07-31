@@ -49,16 +49,26 @@
         back(){
             this.$router.go(-1);
         },
-        zhuce(userName,password,question,answer,favorite){
-            console.log(userName);
-            console.log(password);
-            console.log(question);
-            console.log(answer);
-            console.log(favorite);
-
-            http.register(this,userName,password,question,answer,favorite)
+        zhuce(){
+            var reg = /^\w{6,20}$/;
+            if (!reg.test(this.userName) || !reg.test(this.password)){
+                alert("用户名或密码号不正确");
+                return;
+            }
+            http.register(this,this.userName,this.password,this.question,this.answer)
                 .then((res)=>{
                     console.log(res);
+
+                    if(res.data.result){
+                        alert(res.data.msg);
+                        localStorage.userName=this.userName;
+                        localStorage.password = this.password;
+                        localStorage.question = this.question;
+                        localStorage.answer = this.answer;
+                        location.href='/login';
+                    }else{
+                        alert(res.data.msg);
+                    }
                 })
 
         }
