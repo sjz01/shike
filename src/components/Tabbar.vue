@@ -12,11 +12,11 @@
            <p>&#xe503;</p>
            <p>分类</p>
         </router-link>
-<!--        <router-link to="/ok" class="item">-->
-<!--           <p>&#xe644;</p>-->
-<!--           <p>我的</p>-->
-<!--        </router-link>-->
-        <router-link to="/mine" class="item">
+        <router-link to="/mine" v-if="this.$store.state.lisha.isshow" class="item">
+           <p>&#xe644;</p>
+           <p>我的</p>
+        </router-link>
+        <router-link to="/ok" v-else class="item">
             <p>&#xe644;</p>
             <p>我的</p>
         </router-link>
@@ -26,9 +26,9 @@
 <script>
 export default {
     name:"Tabbar",
-    data(){
-        return{
-
+    created() {
+        if(localStorage.userName==null){
+            this.$store.state.lisha.isshow=true;
         }
     }
 }

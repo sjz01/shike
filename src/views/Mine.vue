@@ -18,11 +18,11 @@ export default {
     methods:{
 
     },
-    beforeCreate(){
-        if(localStorage.userName&&localStorage.password){
-            location.href='/ok';
-        }
-    }
+    // beforeCreate(){
+    //     if(localStorage.userName&&localStorage.password){
+    //         location.href='/ok';
+    //     }
+    // }
 }
 </script>
 

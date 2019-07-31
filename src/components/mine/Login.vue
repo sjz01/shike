@@ -59,6 +59,7 @@ export default {
                    if(res.data.result){
                        alert(res.data.msg);
                        localStorage.userName=this.userName;
+                       this.$store.state.lisha.userName=this.userName;
                        location.href='/ok';
                    }else{
                        alert(res.data.msg+'，请重新登录');
