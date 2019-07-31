@@ -11,9 +11,11 @@
                <span>more</span>
            </div>
         </router-link>
-        <router-link tag=ul to="/vdetail">
+        <div class="tui" @click="clear">退出登录</div>
 
-        </router-link>
+<!--        <router-link tag=ul to="/vdetail">-->
+
+<!--        </router-link>-->
     </div>
 </template>
 
@@ -25,6 +27,12 @@ export default {
             name:''
         }
     },
+    methods:{
+      clear(){
+          localStorage.clear();
+          location.href='/login';
+      }
+    },
     created() {
 
         this.name=localStorage.userName;
@@ -34,11 +42,22 @@ export default {
 </script>
 
 <style lang='less' scoped>
+    @import url(../../maincolor/maincolor.less);
 #ok {
     margin-top: 50px;
     background-color: #F8F8F8;
     padding: 20px 10px 0 ;
+    .tui{
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+        background-color: @mainColor;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 20px;
 
+    }
     .name {
         margin-top: 20px;
         width: 100%;

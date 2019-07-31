@@ -20,6 +20,9 @@
                 <router-link to="/resetpwd">
                     <span class="reset">重置密码</span>
                 </router-link>
+                <router-link to="register">
+                    <span class="forget">注册</span>
+                </router-link>
                 <router-link to="resetpwd">
                     <span class="forget">忘记密码</span>
                 </router-link>
@@ -42,6 +45,9 @@ export default {
     },
    methods:{
        back(){
+           if(localStorage.userName==null){
+               location.href='/mine';
+           }
            this.$router.go(-1);
        },
        login(){
@@ -52,6 +58,7 @@ export default {
                    console.log(this.userName)
                    if(res.data.result){
                        alert(res.data.msg);
+                       localStorage.userName=this.userName;
                        location.href='/ok';
                    }else{
                        alert(res.data.msg+'，请重新登录');
