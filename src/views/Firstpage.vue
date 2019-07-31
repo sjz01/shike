@@ -15,13 +15,13 @@
                 </router-link>
                 <router-link to="/hots2">
                 <div class="hots_card">
-                   <img class="hots_card_img" src="http://cp1.douguo.net/upload/caiku/7/3/d/yuan_73a82e6aa2c5dcdcda814c9eeba3491d.jpg" alt="">
+                   <img class="hots_card_img" src="https://i01piccdn.sogoucdn.com/2875d6cde2744afe" alt="">
                    <p class="hots_card_text">美容</p>
                 </div>
                 </router-link>
                 <router-link to="/hots3">
                 <div class="hots_card">
-                   <img class="hots_card_img" src="http://cp1.douguo.net/upload/caiku/7/3/d/yuan_73a82e6aa2c5dcdcda814c9eeba3491d.jpg" alt="">
+                   <img class="hots_card_img" src="https://img.tulaoshi.com/image/20160823/5dd018068a22fa735bbf72b5b225a13d.jpg" alt="">
                    <p class="hots_card_text">清热祛火</p>
                 </div>
                 </router-link>
@@ -31,13 +31,13 @@
            <div class="hots">
             <router-link to="/hots4">
                <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.csxdf.com/uploads/allimg/160604/1_160604175315_1.jpg" alt="">
+                   <img class="hots_card_img" src="https://i01piccdn.sogoucdn.com/b9929d0509d9aeb7" alt="">
                    <p class="hots_card_text">小吃</p>
                 </div>
             </router-link>
             <router-link to="/hots5">
                 <div class="hots_card">
-                   <img class="hots_card_img" src="http://www.csxdf.com/uploads/allimg/160604/1_160604175315_1.jpg" alt="">
+                   <img class="hots_card_img" src="https://i04piccdn.sogoucdn.com/bddcba087c08bff6" alt="">
                    <p class="hots_card_text">凉菜</p>
                 </div>
               </router-link>
@@ -53,20 +53,20 @@
            <div class="hots hots_ch">
            <router-link to="/hots7">
                <div class="hots_card ">
-                   <img class="hots_card_img" src="https://b3-q.mafengwo.net/s9/M00/63/B2/wKgBs1hXlGSAG470AAYSCPhEUdg97.jpeg?imageMogr2%2Fthumbnail%2F%21300x190r%2Fgravity%2FCenter%2Fcrop%2F%21300x190%2Fquality%2F90" alt="">
+                   <img class="hots_card_img" src="https://i04piccdn.sogoucdn.com/a5382fb2be97f9fc" alt="">
                    <p class="hots_card_text">便当</p>
                 </div>
             </router-link>
             <router-link to="/hots8">
                <div class="hots_card ">
-                   <img class="hots_card_img" src="https://b3-q.mafengwo.net/s9/M00/63/B2/wKgBs1hXlGSAG470AAYSCPhEUdg97.jpeg?imageMogr2%2Fthumbnail%2F%21300x190r%2Fgravity%2FCenter%2Fcrop%2F%21300x190%2Fquality%2F90" alt="">
+                   <img class="hots_card_img" src="https://i02piccdn.sogoucdn.com/12fc06d0cf014645" alt="">
                    <p class="hots_card_text">宵夜</p>
                 </div>
                 </router-link>
                 <router-link to="/hots9">
                <div class="hots_card ">
-                   <img class="hots_card_img" src="https://b3-q.mafengwo.net/s9/M00/63/B2/wKgBs1hXlGSAG470AAYSCPhEUdg97.jpeg?imageMogr2%2Fthumbnail%2F%21300x190r%2Fgravity%2FCenter%2Fcrop%2F%21300x190%2Fquality%2F90" alt="">
-                   <p class="hots_card_text">年夜饭</p>
+                   <img class="hots_card_img" src="https://i01piccdn.sogoucdn.com/decabb35110e50bd" alt="">
+                   <p class="hots_card_text">情人节</p>
                 </div>
                 </router-link>
             </div>
@@ -127,7 +127,7 @@ export default {
       display: flex;
     }
     .hots_ch {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
     .hots_card {
       width: 100px;
@@ -138,12 +138,14 @@ export default {
 
       .hots_card_img {
         width: 100%;
+        height: 75px;
       }
       .hots_card_text {
         color: black;
         text-align: center;
         font-size: 16px;
         margin-top: 2px;
+        text-decoration: none;
       }
     }
   }

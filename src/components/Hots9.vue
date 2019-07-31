@@ -30,7 +30,7 @@ export default {
     },
     getdata() {
         
-      http.getDetail(this,'年夜饭').then(res => {
+      http.getDetail(this,'情人节').then(res => {
         // res.data.showapi_res_body.datas.forEach((item)=>{
         // this.$store.state.mingyu.cpName.push(item.cpName);
         // this.$store.state.mingyu.smallImg.push(item.smallImg);
