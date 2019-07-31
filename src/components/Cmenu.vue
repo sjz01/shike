@@ -93,18 +93,23 @@ export default {
   ul {
     width: 90%;
     margin: 0 auto;
-    margin-top: 54px;
+    margin-top: 62px;
 
     li {
       display: flex;
-
-      div {
-        margin: 5px;
+      margin-top:14px;
+     
+      #imgk{
+        width: 60%;
+       
+        margin-right:22px
       }
-
       #des{
           width:50%;
           height:50px;
+          padding-top:14px; 
+          font-weight: 600;
+          color: mainColor;
       }
     }
   }

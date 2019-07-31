@@ -63,12 +63,13 @@ export default {
 
 <style lang='less' scoped>
 #menu {
-  margin-top: 50px;
+  margin-top: 60px;
   color: black;
+  font-size: 20px;
 
   .vtl_d {
     width: 94%;
-    height: 265px;
+    height: 285px;
     margin: 0 auto;
     margin-top: 10px;
     border-bottom: 1px solid #ccc;
@@ -79,8 +80,9 @@ export default {
     }
     .pic_font {
       margin: 4px 0;
-      font-size: 16px;
+      font-size: 22px;
       font-weight: 600;
+      font-family: "微软雅黑";
       color: black;
       overflow: hidden;
       text-overflow: ellipsis;
