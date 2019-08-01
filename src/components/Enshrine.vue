@@ -5,12 +5,12 @@
             <span> 我的收藏 </span>
         </nav>
         <router-link tag=ul to="/vdetail">
-            <li >
+            <li v-for="(item,key) in arr" :key="key" @click="fainfo">
                 <div id="imgk">
-                    <img src="" alt="">
+                    <img :src="item.smallImg" alt="">
                 </div>
                 <div id="des">
-                    <p class="title"></p>
+                    <p class="title">{{item.cpName}}</p>
                 </div>
             </li>
         </router-link>
@@ -24,37 +24,38 @@
         data(){
             return{
                favorite: [],
+                type:[],
+                id:[],
+                arr:[]
             }
         },
         methods:{
                 back(){
                     this.$router.go(-1);
-                }
+                },
+            fainfo(){
 
+            }
         },
         created() {
-            var that  = this;
-           http.getshou(this)
-               .then((res)=>{
-                   // console.log(res);
-                   this.favorite = res.data.user[4];
-                   console.log(this.favorite);
-               })
-            console.log(that.favorite);//拿不到
+            console.log(this.$store.state.lisha.favorite.favorite);
+            this.$store.state.lisha.favorite.favorite.forEach((item)=>{
+                // console.log(item.id);
+                http.getVdetail(this,item.type,item.id)
+                    .then((res)=>{
+                        console.log(res);
+                        console.log(res.data.showapi_res_body.datas[0]);
+                        this.arr.push(res.data.showapi_res_body.datas[0]);
+                        // console.log(this.arr);
+
+                    })
+                this.$store.state.type=item.type;
+                this.$store.state.id=item.id;
+
+            })
+
         },
-        //毁掉函数
-        // created() {
-        //     console.log(this.favorite);//拿不到
-        //     for(var item of this.favorite){
-        //         // http.getVdetail(this,item.type,item.id)
-        //         //     .then((res)=>{
-        //         //         console.log(res);
-        //         //     })
-        //     }
-        // }
-        mounted() {
-            console.log(this.favorite);
-        }
+
     }
 </script>
 
@@ -78,17 +79,22 @@
         ul{
             width:90%;
             margin:0 auto;
-            margin-top: 54px;
+            margin-top: 62px;
 
             li{
                 display: flex;
+                margin-top:14px;
                #imgk{
-                   margin-right: 5px;
+                   width: 60%;
+
+                   margin-right:22px
                }
                 #des{
-                    .title{
-                        font-size: 24px;
-                    }
+                    width:50%;
+                    height:50px;
+                    padding-top:14px;
+                    font-weight: 600;
+                    color: @mainColor;
                 }
             }
         }
