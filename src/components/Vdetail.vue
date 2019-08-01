@@ -56,21 +56,24 @@ export default {
         collet(){
             console.log('123')
             console.log(this.id,this.type);
-            this.$store.state.lisha.arr.push({type:this.type,id:this.id});
             console.log(this.$store.state.lisha.arr);
             // console.log(this.$store.state.lisha.arr[0].id);
+            if(this.$store.state.lisha.arr.length==0){
+                this.$store.state.lisha.arr.push({type:this.type,id:this.id})
+            }
+            console.log(this.$store.state.lisha.arr);
             for(var item of this.$store.state.lisha.arr){
-                console.log('123')
-                 if(item.id ==this.id){
-                     return;
-                 }else{
-                     console.log('456');
+                 if(item.id !=this.id){
                      this.$store.state.lisha.arr.push({type:this.type,id:this.id})
                      console.log(this.$store.state.lisha.arr);
+                 }else{
+                     continue;
                  }
-
             }
-            http.updateshou(this,this.$store.state.lisha.arr)
+            console.log('789');
+            var json = JSON.stringify(this.$store.state.lisha.arr)
+            console.log(json)
+            http.updateshou(this,json)
                 .then((res)=>{
                     console.log(res);
                     alert(res.data.msg)

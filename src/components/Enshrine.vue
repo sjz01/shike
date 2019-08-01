@@ -5,12 +5,12 @@
             <span> 我的收藏 </span>
         </nav>
         <router-link tag=ul to="/vdetail">
-            <li v-for="(item,key) in yiqi" :key="key">
+            <li >
                 <div id="imgk">
-                    <img :src="item.smallImg" alt="">
+                    <img src="" alt="">
                 </div>
                 <div id="des">
-                    <p class="title">{{item.cpName}}</p>
+                    <p class="title"></p>
                 </div>
             </li>
         </router-link>
@@ -23,45 +23,31 @@
         name:"Enshrine",
         data(){
             return{
-                smallImg:'',
-                yidui:[],
-                yiqi:{}
+               favorite: [],
             }
         },
         methods:{
-            back(){
-                this.$router.go(-1);
-            },
-            getData(){
-                console.log(this.$store.state.lisha.collet);
-                // console.log(this.$store.state.lisha.collet[0]);
-                // console.log(this.$store.state.lisha.collet[0].id);
-                this.$store.state.lisha.collet.forEach((item)=>{
-                    console.log(item.cpName);
-                    // http.getVde(this,)
-                    //     .then((res)=>{
-                    //         // console.log(res);
-                    //         // this.des = res.data.showapi_res_body.datas[0].des;
-                    //         var yiqi = new Object();
-                    //         this.yiqi.cpName = res.data.showapi_res_body.datas[0].cpName;
-                    //         this.yiqi.smallImg = res.data.showapi_res_body.datas[0].smallImg;
-                    //         this.yidui.push(this.yiqi);
-                    //     })
+                back(){
+                    this.$router.go(-1);
+                }
 
-                })
-                // var a = this.$store.state.lisha.collet.type;
-                // var b = this.$store.state.lisha.collet.id;
-
-
-            }
         },
         created() {
-            this.getData();
-            // http.getV(this).then((res)=>{
-            //     console.log(res);
-            //     http.getVdetail(this,).then((res)=>{})
-            //     console.log(res)
-            // })
+           http.getshou(this)
+               .then((res)=>{
+                   console.log(res);
+                   this.favorite = res.data.user[4];
+                   console.log(this.favorite);
+               })
+            var a = [];
+           a=this.favorite;
+                for(var item of this.favorite){
+                    console.log('123');
+                    // http.getVdetail(this,item.type,item.id)
+                    //     .then((res)=>{
+                    //         console.log(res);
+                    //     })
+                }
         }
 
     }
