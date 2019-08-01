@@ -33,23 +33,28 @@
 
         },
         created() {
+            var that  = this;
            http.getshou(this)
                .then((res)=>{
-                   console.log(res);
+                   // console.log(res);
                    this.favorite = res.data.user[4];
                    console.log(this.favorite);
                })
-            var a = [];
-           a=this.favorite;
-                for(var item of this.favorite){
-                    console.log('123');
-                    // http.getVdetail(this,item.type,item.id)
-                    //     .then((res)=>{
-                    //         console.log(res);
-                    //     })
-                }
+            console.log(that.favorite);//拿不到
+        },
+        //毁掉函数
+        // created() {
+        //     console.log(this.favorite);//拿不到
+        //     for(var item of this.favorite){
+        //         // http.getVdetail(this,item.type,item.id)
+        //         //     .then((res)=>{
+        //         //         console.log(res);
+        //         //     })
+        //     }
+        // }
+        mounted() {
+            console.log(this.favorite);
         }
-
     }
 </script>
 
