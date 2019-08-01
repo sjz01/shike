@@ -109,6 +109,7 @@ export default {
 <style lang='less' scoped>
 #first-page {
   margin-top: 50px;
+  width:100%;
 
   .hots_zt {
     font-size: 20px;
@@ -138,16 +139,21 @@ export default {
       margin: 0 auto;
       display: flex;
       margin-top: 10px;
+      justify-content: space-around;
+      a{
+        width:30%;
+      }
     }
     .hots_ch {
       margin-bottom: 60px;
     }
     .hots_card {
-      width: 100px;
+      width: 100%;
       height: 100px;
-      margin: 10px 8px;
+      margin: 10px 0;
       padding: 0;
       justify-content: space-between;
+      text-align: center;
 
       .hots_card_img {
         width: 100%;
