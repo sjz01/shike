@@ -79,7 +79,7 @@ export default {
   background: rgb(241, 248, 203);
 
   #v-pills-tab {
-    width: 40%;
+    width: 56%;
     background: rgb(241, 248, 203);
     font-size: 14px;
     text-align: center;
@@ -88,7 +88,7 @@ export default {
       width: 100%;
       height: 52px;
       line-height: 45px;
-      font-size: 17px;
+      font-size: 16px;
       font-family: "微软雅黑";
       font-weight: 600;
     }
@@ -102,12 +102,12 @@ export default {
     }
   }
   #a {
-    width: 74%;
+    width: 100%;
     background: white;
     font-family: "myFont";
 
     #v-pills-home {
-      width: 90%;
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
 
