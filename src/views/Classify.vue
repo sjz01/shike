@@ -72,16 +72,26 @@ export default {
 </script>
 
 <style lang='less' scoped>
+
 #classify {
   margin-top: 50px;
   display: flex;
   background: rgb(241, 248, 203);
 
   #v-pills-tab {
-    width: 25%;
+    width: 40%;
     background: rgb(241, 248, 203);
     font-size: 14px;
     text-align: center;
+
+    #v-pills-home-tab{
+      width: 100%;
+      height: 52px;
+      line-height: 45px;
+      font-size: 17px;
+      font-family: "微软雅黑";
+      font-weight: 600;
+    }
 
     .nav-link {
       color: black;
@@ -102,13 +112,13 @@ export default {
       flex-wrap: wrap;
 
       #smallk {
-        width: 63px;
-        height: 30px;
-        font-size: 14px;
-        border: 1px solid grey;
+        width: 98px;
+        height: 40px;
+        font-size: 16px;
+        border: 2px solid gray;
         border-radius: 40%;
         text-align: center;
-        line-height: 30px;
+        line-height: 40px;
         margin: 10px 8px;
         color: black;
       }
