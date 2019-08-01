@@ -1,3 +1,4 @@
+
 <template>
     <div id="first-page">
         <router-link to="/menu">
