@@ -7,7 +7,7 @@
          <router-link tag=ul to="/vdetail">
              <li v-for="(item,key) in $store.state.liux.des" :key='key' @click="chuan(item)">
                  <div id="imgk">
-                     <img :src="item.smallImg" alt="">
+                     <img class="rounded" :src="item.smallImg" alt="">
                  </div>
                    <div id="des">
                     <p>{{item.cpName}}</p>

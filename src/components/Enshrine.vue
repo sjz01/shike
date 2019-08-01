@@ -7,7 +7,7 @@
         <router-link tag=ul to="/vdetail">
             <li v-for="(item,key) in arr" :key="key" @click="fainfo">
                 <div id="imgk">
-                    <img :src="item.smallImg" alt="">
+                    <img class="rounded" :src="item.smallImg" alt="">
                 </div>
                 <div id="des">
                     <p class="title">{{item.cpName}}</p>
