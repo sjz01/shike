@@ -1,7 +1,7 @@
 <template>
     <div id="classify" >
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"  :key="key"><span @click="dj(item)">选项卡</span></a>
+        <!-- <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"  :key="key"><span @click="dj(item)">选项卡</span></a> -->
         <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"  v-for="(item,key) in $store.state.liux.leftList" :key="key"><span @click="dj(item)">{{item}}</span></a>
        
     </div>
