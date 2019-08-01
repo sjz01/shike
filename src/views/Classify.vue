@@ -1,6 +1,9 @@
 <template>
-    <div id="classify" >
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+   <div id="classify">
+     <div id="warn">{{this.seen}}</div>
+      <div id="classifya" >
+      
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" @click="func">
         <!-- <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"  :key="key"><span @click="dj(item)">选项卡</span></a> -->
         <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"  v-for="(item,key) in $store.state.liux.leftList" :key="key"><span @click="dj(item)">{{item}}</span></a>
        
@@ -15,6 +18,7 @@
         </div>
         </router-link>
     </div>
+   </div>
 </template>
 
 <script>
@@ -27,10 +31,18 @@ export default {
       arr: [],
       content:[],
       data: null,
-      content:[]
+      content:[],
+      seen:'食客，请点击左侧有惊喜哦❤'
     };
   },
   methods: {
+       func: function () {
+
+        this.seen=''
+
+       
+       },
+
     dj:function(item) {
       // console.log(item)
       // console.log(this.data[item])
@@ -72,9 +84,19 @@ export default {
 </script>
 
 <style lang='less' scoped>
-
-#classify {
+#classify{
   margin-top: 50px;
+
+  #warn{
+    width: 47%;
+    height: 30px;
+    font-size: 20px;
+    position: absolute;
+    top: 250px;
+    right: 18px;
+  }
+#classifya {
+  
   display: flex;
   background: rgb(241, 248, 203);
 
@@ -124,6 +146,9 @@ export default {
       }
     }
   }
-  margin-bottom: 62px;
+ 
 }
+ margin-bottom: 62px;
+}
+
 </style>
