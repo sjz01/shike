@@ -54,19 +54,14 @@ export default {
             this.$router.go(-1);
         },
         collet(){
-            console.log(this.$store.state.lisha.arr);
-            this.$store.state.lisha.arr.forEach((item)=>{
-                if(itme.type!=this.type&&item.id!=this.id){
-                    console.log(this.$store.state.lisha.arr);
-                    this.$store.state.lisha.arr.push({type:this.type,id:this.id})
-                    http.updateshou(this,this.$store.state.lisha.arr)
-                        .then((res)=>{
-                            console.log(res);
-                        })
-                }else{
-
-                }
-            });
+            for(var item of this.$store.state.lisha.arr){
+                 if(this.$store.state.lisha.arr.includes(this.id)){
+                     return;
+                 }else{
+                     this.$store.state.lisha.arr.push({type:this.type,id:this.id})
+                 }
+                 console.log(this.$store.state.lisha.arr)
+            };
         },
         getData(){
             http.getVdetail(this,this.$store.state.type,this.$store.state.id)
