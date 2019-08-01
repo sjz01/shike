@@ -5,9 +5,9 @@
             <span> 我的收藏 </span>
         </nav>
         <router-link tag=ul to="/vdetail">
-            <li v-for="(item,key) in arr" :key="key" @click="fainfo">
+            <li v-for="(item,key) in $store.state.lisha.favorite" :key="key" @click="fainfo(item.id,item.type)">
                 <div id="imgk">
-                    <img class="rounded" :src="item.smallImg" alt="">
+                    <img class="rounded" src="" alt="">
                 </div>
                 <div id="des">
                     <p class="title">{{item.cpName}}</p>
@@ -38,21 +38,21 @@
             }
         },
         created() {
-            console.log(this.$store.state.lisha.favorite.favorite);
-            this.$store.state.lisha.favorite.favorite.forEach((item)=>{
-                // console.log(item.id);
-                http.getVdetail(this,item.type,item.id)
-                    .then((res)=>{
-                        console.log(res);
-                        console.log(res.data.showapi_res_body.datas[0]);
-                        this.arr.push(res.data.showapi_res_body.datas[0]);
-                        // console.log(this.arr);
+            // console.log(this.$store.state.lisha.favorite,'我的收藏页面创建完成');
+            // this.$store.state.lisha.favorite.favorite.forEach((item)=>{
+            //     // console.log(item.id);
+            //     http.getVdetail(this,item.type,item.id)
+            //         .then((res)=>{
+            //             console.log(res);
+            //             console.log(res.data.showapi_res_body.datas[0]);
+            //             this.arr.push(res.data.showapi_res_body.datas[0]);
+            //             // console.log(this.arr);
 
-                    })
-                this.$store.state.type=item.type;
-                this.$store.state.id=item.id;
+            //         })
+            //     this.$store.state.type=item.type;
+            //     this.$store.state.id=item.id;
 
-            })
+            // })
 
         },
 

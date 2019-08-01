@@ -46,7 +46,9 @@ export default {
             cpName:"",
             smallImg:'',
             id:'',
-            type:''
+            type:'',
+            title:'',
+            img:''
         }
     },
     methods:{
@@ -62,18 +64,19 @@ export default {
             // console.log(this.$store.state.lisha.arr);
             // console.log(this.$store.state.lisha.arr[0].id);
             if(this.$store.state.lisha.arr.length==0){
-                this.$store.state.lisha.arr.push({type:this.type,id:this.id})
+                this.$store.state.lisha.arr.push({type:this.type,id:this.id,img:this.smallImg,title:this.cpName})
             }
-            console.log(this.$store.state.lisha.arr);
+            console.log(this.$store.state.lisha.arr)
             for(var item of this.$store.state.lisha.arr){
                  if(item.id !=this.id){
-                     this.$store.state.lisha.arr.push({type:this.type,id:this.id})
+                     this.$store.state.lisha.arr.push({type:this.type,id:this.id,img:this.smallImg,title:this.cpName})
                      console.log(this.$store.state.lisha.arr);
                  }else{
                      continue;
                  }
             }
             console.log('789');
+            console.log(this.$store.state.lisha.arr)
             var json = JSON.stringify(this.$store.state.lisha.arr)
             console.log(json)
             http.updateshou(this,json)
