@@ -26,7 +26,7 @@
                 <input id="answer" type="text" v-model="answer" placeholder="请输入答案" required>
             </div>
 <!--            <router-link to="/login">-->
-                    <p class="register" v-model="answer" @click="zhuce(userName,password,question,answer,1)">注册</p>
+                    <p class="register"@click="zhuce(userName,password,question,answer,1)">注册</p>
 <!--            </router-link>-->
         </div>
     </div>
