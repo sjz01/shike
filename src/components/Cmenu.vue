@@ -109,7 +109,7 @@ export default {
           height:50px;
           padding-top:14px; 
           font-weight: 600;
-          color: mainColor;
+          color: @mainColor;
       }
     }
   }

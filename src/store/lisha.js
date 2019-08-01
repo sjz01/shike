@@ -4,6 +4,7 @@ export default {
   collet:[],
   userName:'',
   isshow:false,
-  arr:[]
+  arr:[],
+  favorite:[]
 
 }

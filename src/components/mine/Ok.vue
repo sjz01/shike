@@ -6,9 +6,9 @@
             <p>{{name}}</p>
         </div>
         <router-link to="/enshrine">
-           <div class="enshrine">
-               <span>我的收藏&#xe644;</span>
-               <span>more</span>
+           <div class="enshrine" @click="getshou">
+               <span>我的收藏</span>
+               <span>&#xe644;</span>
            </div>
         </router-link>
         <div class="tui" @click="clear">退出登录</div>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+    import http from '@/axios/Api.js'
 export default {
     name:"Ok",
     data(){
@@ -31,7 +32,16 @@ export default {
       clear(){
           localStorage.clear();
           location.href='/login';
-      }
+      },
+        getshou(){
+            http.getshou(this)
+                .then((res)=>{
+                    // console.log(res);
+                    this.$store.state.lisha.favorite = res.data.user[4];
+                    console.log(this.$store.state.lisha.favorite);
+                })
+
+        }
     },
     created() {
 
@@ -82,7 +92,7 @@ export default {
         height: 50px;
         line-height: 50px;
         background-color: white;
-
+        color: @mainColor;
         span:nth-of-type(2) {
             float: right;
         }
