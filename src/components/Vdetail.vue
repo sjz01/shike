@@ -5,7 +5,7 @@
         <span>菜谱详情</span>
     </nav>
         <div id="detail">
-            <img class="firstpic" :src="this.smallImg" alt="">
+            <img class="firstpic rounded" :src="this.smallImg" alt="">
             <div class="item">
                 <p class="cpName">{{this.cpName}}</p>
                 <div class="enshrine" @click="collet">收藏菜谱</div>
@@ -22,7 +22,7 @@
                 <p class="food">做法</p>
                 <div class="way" v-for="(step,key1) in steps" :key="key1">
                     <p>{{step.orderNum+'.'+step.content}}</p>
-                    <img :src="step.imgUrl" alt="">
+                    <img class="rounded" :src="step.imgUrl" alt="">
                 </div>
                 <p class="food">小贴士</p>
                 <p class="des">{{this.tip}}</p>

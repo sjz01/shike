@@ -4,7 +4,7 @@
         <mt-loadmore topPullText="" topDropText="更新中" topLoadingText="" :top-method="loadTop" :bottom-method="loadBottom"  ref="loadmore">
         <router-link to="/vdetail">
             <div class="vtl_d" v-for="(item,key) in $store.state.mingyu.food" :key = "key" @click="chuan(item)" >
-                <img class="pic" :src="item.smallImg" alt="图片加载异常">
+                <img class="pic rounded" :src="item.smallImg" alt="图片加载异常">
                 <p class="pic_font">{{item.cpName}}</p>
             </div>
         </router-link>
