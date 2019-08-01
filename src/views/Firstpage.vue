@@ -12,19 +12,19 @@
             
                <router-link to="/hots1">
                <div class="hots_card">
-                   <img  class="hots_card_img rounded" src="http://img3.imgtn.bdimg.com/it/u=2365659156,1217198181&fm=26&gp=0.jpg" alt="">
+                   <img  class="hots_card_img shadow bg-white rounded" src="http://img3.imgtn.bdimg.com/it/u=2365659156,1217198181&fm=26&gp=0.jpg" alt="">
                    <p class="hots_card_text">减肥</p>
                 </div>
                 </router-link>
                 <router-link to="/hots2">
                 <div class="hots_card">
-                   <img class="hots_card_img rounded" src="http://img5.imgtn.bdimg.com/it/u=396815354,2668923717&fm=11&gp=0.jpg" alt="">
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img5.imgtn.bdimg.com/it/u=396815354,2668923717&fm=11&gp=0.jpg" alt="">
                    <p class="hots_card_text">美容</p>
                 </div>
                 </router-link>
                 <router-link to="/hots3">
                 <div class="hots_card">
-                   <img class="hots_card_img rounded" src="http://img5.imgtn.bdimg.com/it/u=2287053303,1433954522&fm=11&gp=0.jpg" alt="">
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img5.imgtn.bdimg.com/it/u=2287053303,1433954522&fm=11&gp=0.jpg" alt="">
                    <p class="hots_card_text">清热祛火</p>
                 </div>
                 </router-link>
@@ -34,19 +34,19 @@
            <div class="hots">
             <router-link to="/hots4">
                <div class="hots_card">
-                   <img class="hots_card_img rounded" src="http://img4.imgtn.bdimg.com/it/u=2625310784,1611056942&fm=15&gp=0.jpg" alt="">
-                   <p class="hots_card_text">小吃</p>
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img4.imgtn.bdimg.com/it/u=2625310784,1611056942&fm=15&gp=0.jpg" alt="">
+                   <p class="hots_card_text ">小吃</p>
                 </div>
             </router-link>
             <router-link to="/hots5">
                 <div class="hots_card">
-                   <img class="hots_card_img rounded" src="http://img5.imgtn.bdimg.com/it/u=1264998808,2146663255&fm=15&gp=0.jpg" alt="">
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img5.imgtn.bdimg.com/it/u=1264998808,2146663255&fm=15&gp=0.jpg" alt="">
                    <p class="hots_card_text">甜品</p>
                 </div>
               </router-link>
               <router-link to="/hots6">
                 <div class="hots_card">
-                   <img class="hots_card_img rounded" src="http://img1.imgtn.bdimg.com/it/u=1373821997,480324908&fm=26&gp=0.jpg" alt="">
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img1.imgtn.bdimg.com/it/u=1373821997,480324908&fm=26&gp=0.jpg" alt="">
                    <p class="hots_card_text">家常菜</p>
                 </div>
                 </router-link>
@@ -57,19 +57,19 @@
            <div class="hots hots_ch">
            <router-link to="/hots7">
                <div class="hots_card ">
-                   <img class="hots_card_img rounded" src="http://img1.imgtn.bdimg.com/it/u=1046240986,4273255993&fm=11&gp=0.jpg" alt="">
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img1.imgtn.bdimg.com/it/u=1046240986,4273255993&fm=11&gp=0.jpg" alt="">
                    <p class="hots_card_text">便当</p>
                 </div>
             </router-link>
             <router-link to="/hots8">
                <div class="hots_card ">
-                   <img class="hots_card_img rounded" src="http://img3.imgtn.bdimg.com/it/u=1421160164,106276891&fm=15&gp=0.jpg" alt="">
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img3.imgtn.bdimg.com/it/u=1421160164,106276891&fm=15&gp=0.jpg" alt="">
                    <p class="hots_card_text">宵夜</p>
                 </div>
                 </router-link>
                 <router-link to="/hots9">
                <div class="hots_card ">
-                   <img class="hots_card_img rounded" src="http://img2.imgtn.bdimg.com/it/u=3500860379,617899449&fm=15&gp=0.jpg" alt="">
+                   <img class="hots_card_img shadow bg-white rounded" src="http://img2.imgtn.bdimg.com/it/u=3500860379,617899449&fm=15&gp=0.jpg" alt="">
                    <p class="hots_card_text">情人节</p>
                 </div>
                 </router-link>

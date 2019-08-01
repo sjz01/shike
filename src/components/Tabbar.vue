@@ -39,17 +39,18 @@ export default {
 #tab-bar{
     width:100%;
     height:60px;
-    background: white;
+    background: @mainColor;
     display: flex;
     justify-content: space-around;
     box-sizing: border-box;
     position: fixed;
     bottom: 0;
-    color: @mainColor;
+    color: white;
     border-top:1px solid  @mainColor;
     
       a{
-           color: @mainColor;
+           color: white;
+           text-decoration: none;
       }
     
      .item{

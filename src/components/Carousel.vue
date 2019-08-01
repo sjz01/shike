@@ -3,13 +3,13 @@
         <swiper :options="swiperOption" ref="mySwiper" class="swiper">
             <!-- slides -->
             <swiper-slide class="swiper-slide">
-                <img class="slide_img rounded" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564588629660&di=3d5bab7e3c5074a9b1590d9247fd1fc2&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151211%2Fmp47814565_1449763510414_4.gif" alt="">
+                <img class="slide_img " src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564588629660&di=3d5bab7e3c5074a9b1590d9247fd1fc2&imgtype=0&src=http%3A%2F%2Fphotocdn.sohu.com%2F20151211%2Fmp47814565_1449763510414_4.gif" alt="">
             </swiper-slide>
             <swiper-slide class="swiper-slide">
-                <img class="slide_img rounded" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564588788386&di=fd2b0dd9eed028173ffd489e3db143ef&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201703%2F10%2F20170310165828_Av4GE.thumb.700_0.gif" alt="">
+                <img class="slide_img " src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564588788386&di=fd2b0dd9eed028173ffd489e3db143ef&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201703%2F10%2F20170310165828_Av4GE.thumb.700_0.gif" alt="">
                 </swiper-slide>
             <swiper-slide class="swiper-slide">
-                <img class="slide_img rounded" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564588709317&di=2b761ddfc45c15ea652267794f774758&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Ffeed%2Fpic%2Fitem%2F359b033b5bb5c9eafa106db9d839b6003bf3b38d.jpg" alt="">
+                <img class="slide_img " src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1564588709317&di=2b761ddfc45c15ea652267794f774758&imgtype=0&src=http%3A%2F%2Fhiphotos.baidu.com%2Ffeed%2Fpic%2Fitem%2F359b033b5bb5c9eafa106db9d839b6003bf3b38d.jpg" alt="">
                 </swiper-slide>
             <!-- Optional controls -->
             <div class="swiper-pagination"  slot="pagination" ></div>
