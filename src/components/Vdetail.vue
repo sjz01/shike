@@ -54,9 +54,12 @@ export default {
             this.$router.go(-1);
         },
         collet(){
-            console.log('123')
-            console.log(this.id,this.type);
-            console.log(this.$store.state.lisha.arr);
+            if(localStorage.userName==null){
+                alert("请先登录或者注册");
+                return;
+            }
+            // console.log(this.id,this.type);
+            // console.log(this.$store.state.lisha.arr);
             // console.log(this.$store.state.lisha.arr[0].id);
             if(this.$store.state.lisha.arr.length==0){
                 this.$store.state.lisha.arr.push({type:this.type,id:this.id})

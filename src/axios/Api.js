@@ -1,6 +1,6 @@
 //接口的配置
- const showapi_appid = "101064"
- const showapi_sign = 'aac7679ea2754daab3c11ee13a135a37'
+ const showapi_appid = "101226"
+ const showapi_sign = '6d4920a562cd4d73a7e1c7c03c056ba6'
  const classpath = 'http://route.showapi.com/1164-2'
  const imgpath = 'http://route.showapi.com/1164-1'
 const sc = 'http://123.56.195.82:9999'
