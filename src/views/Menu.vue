@@ -62,16 +62,31 @@ export default {
 </script>
 
 <style lang='less' scoped>
+@import url(../maincolor/maincolor.less);
+
 #menu {
-  margin-top: 60px;
+  margin-top: 50px;
   color: black;
-  font-size: 20px;
+
+  .left {
+    font-family: "myFont";
+    font-size: 24px;
+    width: 14%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: @mainColor;
+    position: fixed;
+    top: 0;
+    color: white;
+    z-index: 11;
+  }
 
   .vtl_d {
     width: 94%;
-    height: 285px;
+    height: 270px;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 12px;
     border-bottom: 1px solid #ccc;
 
     .pic {

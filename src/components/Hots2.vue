@@ -88,9 +88,9 @@ export default {
 
   .vtl_d {
     width: 94%;
-    height: 280px;
+    height: 270px;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 12px;
     border-bottom: 1px solid #ccc;
 
     .pic {
@@ -99,12 +99,13 @@ export default {
     }
     .pic_font {
       margin: 4px 0;
-      font-size: 16px;
-      height: 22px;
-      line-height: 22px;
+      font-size: 22px;
       font-weight: 600;
+      font-family: "微软雅黑";
       color: black;
-      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space:nowrap;
     }
   }
   .vtl_p {
@@ -112,7 +113,7 @@ export default {
     line-height: 30px;
     text-align: center;
     color: black;
-    margin-bottom: 70px;
+    margin-bottom: 40px;
   }
 }
 </style>
