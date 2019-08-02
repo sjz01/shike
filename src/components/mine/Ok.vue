@@ -36,9 +36,9 @@ export default {
         getshou(){
             http.getshou(this)
                 .then((res)=>{
-                    console.log(res.data.user[4]);
+                    // console.log(res.data.user[4]);
                     this.$store.state.lisha.favorite = res.data.user[4].favorite;
-                   console.log(this.$store.state.lisha.favorite,'点击了收藏');
+                //    console.log(this.$store.state.lisha.favorite,'点击了收藏');
                 })
  
         }

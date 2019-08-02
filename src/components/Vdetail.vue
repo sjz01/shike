@@ -33,177 +33,184 @@
 </template>
 
 <script>
-    import http from '@/axios/Api.js'
+import http from "@/axios/Api.js";
 
 export default {
-    name:"Vdetail",
-    data(){
-        return{
-            steps:[],
-            yl:[],
-            des:'',
-            tip:'',
-            cpName:"",
-            smallImg:'',
-            id:'',
-            type:'',
-            title:'',
-            img:''
-        }
+  name: "Vdetail",
+  data() {
+    return {
+      steps: [],
+      yl: [],
+      des: "",
+      tip: "",
+      cpName: "",
+      smallImg: "",
+      id: "",
+      type: "",
+      title: "",
+      img: ""
+    };
+  },
+  methods: {
+    back() {
+      this.$router.go(-1);
     },
-    methods:{
-        back(){
-            this.$router.go(-1);
-        },
-        collet(){
-            if(localStorage.userName==null){
-                alert("请先登录或者注册");
-                return;
-            }
-            // console.log(this.id,this.type);
-            // console.log(this.$store.state.lisha.arr);
-            // console.log(this.$store.state.lisha.arr[0].id);
-            if(this.$store.state.lisha.arr.length==0){
-                this.$store.state.lisha.arr.push({type:this.type,id:this.id,img:this.smallImg,title:this.cpName})
-            }
-            console.log(this.$store.state.lisha.arr)
-            for(var item of this.$store.state.lisha.arr){
-                 if(item.id !=this.id){
-                     this.$store.state.lisha.arr.push({type:this.type,id:this.id,img:this.smallImg,title:this.cpName})
-                     console.log(this.$store.state.lisha.arr);
-                 }else{
-                     continue;
-                 }
-            }
-            console.log('789');
-            console.log(this.$store.state.lisha.arr)
-            var json = JSON.stringify(this.$store.state.lisha.arr)
-            console.log(json)
-            http.updateshou(this,json)
-                .then((res)=>{
-                    console.log(res);
-                    alert(res.data.msg)
-                })
-        },
-        getData(){
-            http.getVdetail(this,this.$store.state.type,this.$store.state.id)
-                .then((res)=>{
-                // console.log(res);
-                    this.steps=res.data.showapi_res_body.datas[0].steps;
-                    this.yl = res.data.showapi_res_body.datas[0].yl;
-                    this.des = res.data.showapi_res_body.datas[0].des;
-                    this.tip = res.data.showapi_res_body.datas[0].tip;
-                    this.cpName = res.data.showapi_res_body.datas[0].cpName;
-                    this.smallImg= res.data.showapi_res_body.datas[0].smallImg;
-                    this.id= res.data.showapi_res_body.datas[0].id;
-                    this.type= res.data.showapi_res_body.datas[0].type_v2;
+    collet() {
+      // console.log(this.smallImg,this.cpName)
+      if (localStorage.userName == null) {
+        alert("请先登录或者注册");
+        return;
+      }
+      // console.log(this.id,this.type);
+      // console.log(this.$store.state.lisha.arr);
+      // console.log(this.$store.state.lisha.arr[0].id);
+     
+        //我觉得应该把需要的img 和 name 传进去
+        this.$store.state.lisha.arr.push({
+          type: this.type,
+          id: this.id,
+          img: this.smallImg,
+          title: this.cpName
+        });
+      
+      console.log(this.$store.state.lisha.arr);
+       
 
-            })
+       
+       
+       for (let i=0, len=this.$store.state.lisha.arr.length; i<len; i++) {
+        for (let j=i+1; j<len; j++) {
+            if (this.$store.state.lisha.arr[i].id == this.$store.state.lisha.arr[j].id) {
+                this.$store.state.lisha.arr.splice(j, 1);
+                // splice 会改变数组长度，所以要将数组长度 len 和下标 j 减一
+                len--;
+                j--;
+            }
         }
-    },
-    created() {
-        this.getData();
     }
-}
+      console.log(this.$store.state.lisha.arr);
+      var json = JSON.stringify(this.$store.state.lisha.arr);
+      console.log(json);
+      http.updateshou(this, json).then(res => {
+        console.log(res);
+        alert(res.data.msg);
+      });
+    },
+    getData() {
+      http
+        .getVdetail(this, this.$store.state.type, this.$store.state.id)
+        .then(res => {
+          // console.log(res);
+          this.steps = res.data.showapi_res_body.datas[0].steps;
+          this.yl = res.data.showapi_res_body.datas[0].yl;
+          this.des = res.data.showapi_res_body.datas[0].des;
+          this.tip = res.data.showapi_res_body.datas[0].tip;
+          this.cpName = res.data.showapi_res_body.datas[0].cpName;
+          this.smallImg = res.data.showapi_res_body.datas[0].smallImg;
+          this.id = res.data.showapi_res_body.datas[0].id;
+          this.type = res.data.showapi_res_body.datas[0].type_v2;
+        });
+    }
+  },
+  created() {
+    this.getData();
+  }
+};
 </script>
 
 <style lang='less' scoped>
 @import url(../maincolor/maincolor.less);
-#vdetail{
-    margin-top:50px;
-  
-        .navbar{
-            
-            font-family: 'myFont';
-            font-size: 24px;
-            width: 100%;
-            height: 50px;
-            // line-height: 50px;
-            text-align: center;
-            background-color:@mainColor;
-            position:fixed;
-            top:0;
-            color:white;
-            z-index: 11;
-        }
-   }
-#detail{
-                width:100%;
-                height:200px;
+#vdetail {
+  margin-top: 50px;
 
-            .firstpic{
-                        width:100%;
-                        height:200px;
-                }
-                .item{
-                    padding: 0 20px;
-                    .enshrine{
-                        width: 60%;
-                        margin: 0 auto;
-                        height: 40px;
-                        line-height: 40px;
-                        text-align: center;
-                        background-color: tomato;
-                        border-radius: 5px;
-                        font-size: 20px;
-                        color: #ffffff;
-                        margin-bottom: 20px;
-                    }
-                    .cpName{
-                        font-size: 20px;
-                        padding-top:20px;
-                        padding-bottom:20px;
-                        letter-spacing:15px;
-                        font-weight:800;
-                    }
-                    .des{
-                        text-indent:20px;
-                        font-size: 18px;
-                        color: #aaaaaa;
-                    }
-                    .food{
-                        font-size: 20px;
-                        font-weight: 800;
-                        letter-spacing: 15px;
-                        margin-top: 20px;
-                        margin-bottom: 20px;
-                    }
-                    .foods{
-                        width: 100%;
-                        .yl{
-                            border-top: 1px solid #bbbbbb;
-                            border-bottom: 1px solid #bbbbbb;
-                            font-size: 18px;
-                            padding: 10px 25px;
-                            display: flex;
-                            justify-content: space-between;
-                        }
-                    }
-                    .way {
-                          p{
-                              font-size:18px;
-                          }
-                          img{
-                              width: 100%;
-                              margin-bottom: 20px;
-                          }
-                    }
+  .navbar {
+    font-family: "myFont";
+    font-size: 22px;
+    width: 100%;
+    height: 50px;
+    // line-height: 50px;
+    text-align: center;
+    background-color: @mainColor;
+    position: fixed;
+    top: 0;
+    color: white;
+    z-index: 11;
+  }
+}
+#detail {
+  width: 100%;
+  height: 200px;
 
-                }
-                .collect{
-                  
-                    width: 100%;
-                    height: 40px;
-                    line-height: 40px;
-                    text-align: center;
-                    margin: 0 auto;
-                    border-radius: 5px;
-                    background-color: tomato;
-                    margin-bottom: 65px;
-                    margin-top: 20px;
-                    font-size: 20px;
-                    color: #ffffff;
-                }
-
-   }
+  .firstpic {
+    width: 100%;
+    height: 200px;
+  }
+  .item {
+    padding: 0 20px;
+    .enshrine {
+      width: 60%;
+      margin: 0 auto;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-color: tomato;
+      border-radius: 5px;
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    .cpName {
+      font-size: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      letter-spacing: 15px;
+      font-weight: 800;
+    }
+    .des {
+      text-indent: 20px;
+      font-size: 18px;
+      color: #aaaaaa;
+    }
+    .food {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 15px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .foods {
+      width: 100%;
+      .yl {
+        border-top: 1px solid #bbbbbb;
+        border-bottom: 1px solid #bbbbbb;
+        font-size: 18px;
+        padding: 10px 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .way {
+      p {
+        font-size: 18px;
+      }
+      img {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .collect {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: tomato;
+    margin-bottom: 65px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffffff;
+  }
+}
 </style>

@@ -7,10 +7,10 @@
         <router-link tag=ul to="/vdetail">
             <li v-for="(item,key) in $store.state.lisha.favorite" :key="key" @click="fainfo(item.id,item.type)">
                 <div id="imgk">
-                    <img class="rounded" src="" alt="">
+                    <img class="rounded" :src="item.img" alt="">
                 </div>
                 <div id="des">
-                    <p class="title">{{item.cpName}}</p>
+                    <p class="title">{{item.title}}</p>
                 </div>
             </li>
         </router-link>
@@ -33,8 +33,9 @@
                 back(){
                     this.$router.go(-1);
                 },
-            fainfo(){
-
+            fainfo(id,type){
+                this.$store.state.id = id;
+                this.$store.state.type = type;
             }
         },
         created() {
@@ -65,7 +66,7 @@
         width: 100%;
         .navbar{
             font-family: 'myFont';
-            font-size: 24px;
+            font-size: 22px;
             width: 100%;
             height: 50px;
             // line-height: 50px;
