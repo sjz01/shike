@@ -1,10 +1,11 @@
 <template>
     <div id="register">
-        <nav class="navbar">
+        <div id="back">
+             <nav class="navbar">
             <span @click="back">&#xe512;</span>
             <span>注册</span>
         </nav>
-        <p class="title">食客请注册</p>
+        <!-- <p class="title">食客请注册</p> -->
         <div class="info">
             <div class="inputinfo">
                 <input id="userName" type="text" placeholder="请输入用户名" v-model="userName" required>
@@ -29,6 +30,8 @@
                     <p class="register" @click="zhuce(userName,password,question,answer,1)">注册</p>
 <!--            </router-link>-->
         </div>
+        </div>
+       
     </div>
 </template>
 
@@ -80,8 +83,11 @@
 <style lang='less' scoped>
     @import url(../../maincolor/maincolor.less);
 #register{
-       margin-top:70px;
-    .navbar{
+       margin-top:50px;
+
+
+       #back{
+           .navbar{
 
         font-family: 'myFont';
         font-size: 24px;
@@ -147,5 +153,7 @@
         background-color: @mainColor;
         color: #ffffff;
     }
+       }
+   
    }
 </style>

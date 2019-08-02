@@ -1,10 +1,12 @@
 <template>
     <div id="login">
-        <nav class="navbar">
+
+        <div id="back">
+             <nav class="navbar">
             <span @click="back">&#xe512;</span>
             <span>登录</span>
         </nav>
-        <p class="title">食客请登录</p>
+        
         <div class="info">
             <div class="inputinfo">
                 <input type="text" v-model="userName" placeholder="请输入用户名" id="username">
@@ -13,9 +15,9 @@
             <div class="inputinfo">
                 <input type="password" v-model="password" placeholder="请输入密码" id="paw">
             </div>
-<!--            <router-link to="/ok">-->
+
                 <p class="login" @click="login">登录</p>
-<!--            </router-link>-->
+
             <div class="re">
                 <router-link to="/resetpwd">
                     <span class="reset">重置密码</span>
@@ -28,6 +30,8 @@
                 </router-link>
             </div>
         </div>
+        </div>
+      
 
 
     </div>
@@ -76,8 +80,20 @@ export default {
 <style lang='less' scoped>
     @import url(../../maincolor/maincolor.less);
 #login{
-       margin-top:70px;
-        .navbar{
+       width: 100%;
+       height: 100%;
+       margin-top:50px;
+    
+      
+       
+
+       #back{
+            width: 100%;
+            height: 100%;
+            padding-top: 50px;
+            background-image: url("http://img3.imgtn.bdimg.com/it/u=70067934,765752721&fm=26&gp=0.jpg");
+            // opacity: 0.5; 
+           .navbar{
 
             font-family: 'myFont';
             font-size: 24px;
@@ -95,7 +111,7 @@ export default {
             font-size: 20px;
             font-weight: 600;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
        .info{
            width: 80%;
@@ -112,21 +128,22 @@ export default {
                margin-bottom: 40px;
                input{
                    /*display: block;*/
-                   /*border: 1px solid #bbbbbb;*/
-                   outline: 1px solid @mainColor;
+                   border: 1px solid #aaaaaa;
+                   outline: none;
                    width: 100%;
-                   height: 45px;
-                   text-align: center;
-                   line-height: 45px;
+                   height: 50px;
+                   padding-left: 4px;
+                   line-height: 50px;
+                   border-radius: 2%;
                }
 
            }
             .login{
                 width: 100%;
-                height: 40px;
+                height: 50px;
                 font-size: 20px;
                 text-align: center;
-                line-height: 40px;
+                line-height: 50px;
                 background-color: @mainColor;
                 color: #ffffff;
             }
@@ -138,6 +155,13 @@ export default {
             display: flex;
             justify-content: space-between;
             color:@mainColor;
+
+            span{
+               color: rgb(122, 124, 123);
+            }
+           
         }
+       }
+       
    }
 </style>
